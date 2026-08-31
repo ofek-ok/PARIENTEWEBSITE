@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeft } from "lucide-react";
 import { SegmentId, SEGMENT_CONFIGS } from "@/lib/conversion";
 
 export interface MobileStickyCtaProps {
@@ -64,7 +63,6 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({
           href={targetHref}
           onClick={handleClick}
           fullWidth
-          leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
           className="text-sm py-3.5"
         >
           {label}

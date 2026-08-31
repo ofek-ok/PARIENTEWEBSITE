@@ -4,7 +4,7 @@ import { Section } from "./Section";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SegmentId, SEGMENT_CONFIGS } from "@/lib/conversion";
-import { ArrowLeft, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export interface CtaSectionProps {
   segmentId?: SegmentId;
@@ -78,7 +78,6 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
               size="xl"
               href={buttonHref}
               className="w-full sm:w-auto min-w-[260px] text-lg py-4"
-              leftIcon={<ArrowLeft className="w-5 h-5 ml-1" />}
             >
               {buttonText}
             </Button>

@@ -12,7 +12,6 @@ import { MobileStickyCta } from "@/components/conversion/MobileStickyCta";
 import { VideoModal } from "@/components/ui/VideoModal";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
-  ArrowLeft,
   Trophy,
   Users,
   MapPin,
@@ -93,7 +92,6 @@ export default function HomePage() {
                 variant="primary"
                 size="xl"
                 href="#programs"
-                leftIcon={<ArrowLeft className="w-5 h-5 ml-1" />}
                 className="shadow-2xl text-base sm:text-lg py-4 px-8"
               >
                 מצאו את המסלול שמתאים לכם
@@ -172,7 +170,6 @@ export default function HomePage() {
                     size="md"
                     href="/kids"
                     fullWidth
-                    leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
                     לאימוני הילדים
                   </Button>
@@ -205,7 +202,6 @@ export default function HomePage() {
                     size="md"
                     href="/teens"
                     fullWidth
-                    leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
                     לאימוני הנוער
                   </Button>
@@ -238,7 +234,6 @@ export default function HomePage() {
                     size="md"
                     href="/competition"
                     fullWidth
-                    leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
                     למסלול התחרותי
                   </Button>
@@ -271,7 +266,6 @@ export default function HomePage() {
                     size="md"
                     href="/adults"
                     fullWidth
-                    leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
                     לאימוני הבוגרים
                   </Button>
@@ -330,7 +324,6 @@ export default function HomePage() {
                   variant="outline"
                   size="lg"
                   href="/academy"
-                  leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
                   הכירו את Pariente Academy
                 </Button>
@@ -393,7 +386,6 @@ export default function HomePage() {
                   variant="primary"
                   size="lg"
                   href="/competition"
-                  leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
                   הכירו את המסלול התחרותי
                 </Button>
@@ -485,7 +477,6 @@ export default function HomePage() {
                   variant="gold"
                   size="md"
                   href="/sensei-aba"
-                  leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
                   הכירו את סנסאי אבא
                 </Button>
@@ -509,7 +500,6 @@ export default function HomePage() {
                   variant="gold"
                   size="md"
                   href="/achim-lachaim"
-                  leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
                   לסיפור של אחים לחיים
                 </Button>
@@ -554,7 +544,6 @@ export default function HomePage() {
               variant="outline"
               size="lg"
               href="/gallery"
-              leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
             >
               לגלריה
             </Button>

@@ -8,7 +8,7 @@ import { Input, Textarea } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { ShieldCheck, CheckCircle2, ArrowLeft } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export interface LeadFormProps {
   initialSegmentId?: SegmentId;
@@ -257,7 +257,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           type="submit"
           disabled={isSubmitting}
           fullWidth
-          leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
           className="mt-2 text-base py-3.5"
         >
           {isSubmitting ? "שולח פרטים..." : overrideCtaText || config.ctaLabel}

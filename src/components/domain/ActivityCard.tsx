@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeft, Users } from "lucide-react";
+import { Users } from "lucide-react";
 
 export interface ActivityCardProps {
   title: string;
@@ -69,7 +69,6 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           size="md"
           href={ctaHref}
           fullWidth
-          leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
         >
           {ctaLabel}
         </Button>
