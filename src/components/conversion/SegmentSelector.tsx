@@ -38,15 +38,15 @@ export const SegmentSelector: React.FC<SegmentSelectorProps> = ({
   showAdviceOption = true,
 }) => {
   const options: { id: SegmentId; label: string; badge: string }[] = [
-    { id: "kids", label: SEGMENT_CONFIGS.kids.shortLabel, badge: "גילאי 4–12" },
-    { id: "teens", label: SEGMENT_CONFIGS.teens.shortLabel, badge: "גילאי 13–17" },
-    { id: "competition", label: SEGMENT_CONFIGS.competition.shortLabel, badge: "מסלול תחרותי" },
-    { id: "adults", label: SEGMENT_CONFIGS.adults.shortLabel, badge: "גילאי 22–45+" },
-    { id: "sensei-aba", label: SEGMENT_CONFIGS["sensei-aba"].shortLabel, badge: "אבא וילד" },
+    { id: "kids", label: "ילדים", badge: "גילאי 4–12" },
+    { id: "teens", label: "נוער", badge: "גילאי 13–17" },
+    { id: "competition", label: "מסלול תחרותי", badge: "מסלול תחרותי" },
+    { id: "adults", label: "בוגרים", badge: "אימוני בוגרים" },
+    { id: "sensei-aba", label: "סנסאי אבא", badge: "אבא וילד" },
   ];
 
   if (showAdviceOption) {
-    options.push({ id: "general", label: "רוצים ייעוץ / לא בטוחים", badge: "ייעוץ אישי" });
+    options.push({ id: "general", label: "אחר", badge: "ייעוץ ומידע" });
   }
 
   return (

@@ -16,6 +16,7 @@ export interface LeadFormProps {
   overrideTitle?: string;
   overrideSubtitle?: string;
   overrideCtaText?: string;
+  showEmail?: boolean;
   className?: string;
 }
 
@@ -25,6 +26,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
   overrideTitle,
   overrideSubtitle,
   overrideCtaText,
+  showEmail = false,
   className,
 }) => {
   const utmParams = useUtmParams();
@@ -75,7 +77,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       submittedAt: new Date().toISOString(),
     };
 
-    console.log("[Hebrew Lead Submitted]", payload);
+    console.log("[Lead Submitted]", payload);
 
     await new Promise((resolve) => setTimeout(resolve, 600));
     setIsSubmitting(false);
@@ -89,14 +91,14 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         id={config.formAnchorId}
         className="p-8 sm:p-10 text-center space-y-6 border-[#f3c010]/40"
       >
-        <div className="w-16 h-16 rounded-full bg-[#f3c010]/15 border border-[#f3c010] flex items-center justify-center text-[#f3c010] mx-auto">
+        <div className="w-16 h-16 rounded-full bg-[#f3c010]/20 border border-[#f3c010] flex items-center justify-center text-[#f3c010] mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
           <Badge variant="gold">הפרטים התקבלו בהצלחה</Badge>
-          <h3 className="text-2xl sm:text-3xl font-bold text-white">נתראה על המזרן!</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-white">תודה! נחזור אליך בהקדם</h3>
           <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
-            תודה <strong className="text-white">{formData.fullName}</strong>. צוות המאמנים של האקדמיה יחזור אליך למספר <strong className="text-white">{formData.phone}</strong> בהקדם לתיאום וקביעת המפגש.
+            תודה <strong className="text-white">{formData.fullName}</strong>. צוות המאמנים יחזור אליך למספר <strong className="text-white">{formData.phone}</strong> בהקדם.
           </p>
         </div>
         <Button variant="outline" size="md" onClick={() => setSubmitted(false)}>
@@ -110,7 +112,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
     <Card
       variant="solid"
       id={config.formAnchorId}
-      className={`p-6 sm:p-10 space-y-6 border-zinc-800 bg-[#101216] ${className || ""}`}
+      className={`p-6 sm:p-10 space-y-6 border-zinc-800 bg-[#0d0f13] ${className || ""}`}
     >
       <div className="space-y-2 text-right">
         <Badge variant="gold" className="gap-1">
@@ -120,7 +122,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
           {overrideTitle || config.formTitle}
         </h3>
-        <p className="text-sm text-zinc-400">
+        <p className="text-sm text-zinc-400 leading-relaxed">
           {overrideSubtitle || config.formSubtitle}
         </p>
       </div>
@@ -140,13 +142,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Input
             label="שם מלא *"
-            placeholder="לדוגמה: עידו כהן"
+            placeholder="שם מלא"
             required
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
           />
           <Input
-            label="מספר טלפון *"
+            label="טלפון *"
             type="tel"
             placeholder="05X-XXXXXXX"
             required
@@ -155,17 +157,20 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           />
         </div>
 
-        <Input
-          label="כתובת אימייל (רשות)"
-          type="email"
-          placeholder="name@domain.co.il"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
+        {/* Email field rendered only if showEmail is explicitly true */}
+        {showEmail && (
+          <Input
+            label="כתובת אימייל (רשות)"
+            type="email"
+            placeholder="name@domain.co.il"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          />
+        )}
 
         {/* Conditional Program Specific Fields */}
         {config.conditionalFields && config.conditionalFields.length > 0 && (
-          <div className="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-4">
+          <div className="p-4 rounded-xl bg-[#060709] border border-zinc-800 space-y-4">
             <p className="text-xs font-bold uppercase tracking-wider text-[#f3c010]">
               פרטים נוספים למסלול שנבחר
             </p>
@@ -180,7 +185,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     required={field.required}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
+                    className="w-full px-4 py-3 bg-[#0d0f13] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   >
                     <option value="">בחרו באפשרות המתאימה...</option>
                     {field.options?.map((opt) => (
@@ -202,8 +207,8 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                           onClick={() => handleConditionalChange(field.name, opt.value)}
                           className={`px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${
                             isChecked
-                              ? "bg-[#f3c010] text-white border-[#f3c010]"
-                              : "bg-zinc-950 text-zinc-300 border-zinc-800 hover:border-zinc-700"
+                              ? "bg-[#f3c010] text-[#060709] border-[#f3c010]"
+                              : "bg-[#0d0f13] text-zinc-300 border-zinc-800 hover:border-zinc-700"
                           }`}
                         >
                           {opt.label}
@@ -220,7 +225,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     placeholder={field.placeholder}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
+                    className="w-full px-4 py-3 bg-[#0d0f13] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   />
                 )}
               </div>
@@ -230,7 +235,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
         <Textarea
           label="הערות או שאלות נוספות"
-          placeholder="לדוגמה: ניסיון קודם באמנויות לחימה, שאלות לגבי ציוד..."
+          placeholder="שאלות לגבי האימון, ניסיון קודם..."
           value={formData.notes}
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
         />
@@ -253,10 +258,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         >
           {isSubmitting ? "שולח פרטים..." : overrideCtaText || config.ctaLabel}
         </Button>
-
-        {config.ctaSubtext && (
-          <p className="text-xs text-zinc-500 text-center pt-1">{config.ctaSubtext}</p>
-        )}
       </form>
     </Card>
   );

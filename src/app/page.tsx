@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Section } from "@/components/sections/Section";
 import { Container } from "@/components/sections/Container";
 import { SectionHeader } from "@/components/sections/SectionHeader";
@@ -11,13 +10,11 @@ import { MobileStickyCta } from "@/components/conversion/MobileStickyCta";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
   ArrowLeft,
-  Shield,
   Trophy,
   Users,
   MapPin,
   Phone,
   Mail,
-  Clock,
   Play,
   ImageIcon,
   HeartHandshake,
@@ -25,10 +22,12 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
+  const whatsappUrl = `https://wa.me/972${SITE_CONFIG.contact.phone.replace(/[^0-9]/g, "").substring(1)}`;
+
   return (
     <div className="space-y-0 text-right bg-[#040406]">
       {/* ====================================================================
-          SECTION 1 — HERO (מותג רשמי, אריה, תמונת עידו פריינטה, טקסטורת שריטות)
+          SECTION 1 — HERO (בית הספר הגבוה לאמנויות לחימה)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-10 pb-20 lg:py-28 overflow-hidden">
         {/* Background scratch texture overlay */}
@@ -37,7 +36,7 @@ export default function HomePage() {
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
         />
 
-        {/* Subtle Lion Watermark background anchor */}
+        {/* Lion Watermark background anchor */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.04] pointer-events-none -ml-20">
           {/* eslint-disable-next-html-element-for-img */}
           <img
@@ -59,20 +58,20 @@ export default function HomePage() {
                   className="h-8 w-auto object-contain"
                 />
                 <Badge variant="gold" size="md">
-                  אקדמיית פריינטה • כפר סבא
+                  Pariente Academy • כפר סבא
                 </Badge>
               </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] font-display">
-                יותר ממועדון. <br />
-                <span className="text-[#f3c010]">בית לאמנויות לחימה.</span>
+                בית הספר הגבוה <br />
+                <span className="text-[#f3c010]">לאמנויות לחימה</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
-                אימונים לילדים, נוער ובוגרים. ממשמעת וביטחון עצמי ועד מסלול תחרותי לאליפויות בארץ ובעולם.
+                Pariente Academy היא בית לאנשים שבוחרים ללמוד אמנויות לחימה ברצינות. ילדים שעולים על המזרן בפעם הראשונה, בני נוער שמחפשים מסגרת ואתגר, ספורטאים שרוצים להתחרות ובוגרים שהאימון הפך לחלק מהחיים שלהם.
               </p>
 
-              {/* Primary Action (Program Discovery) & Secondary Action */}
+              {/* Primary Action (Navigates to Program Selector) */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Button
                   variant="primary"
@@ -80,10 +79,7 @@ export default function HomePage() {
                   href="#programs"
                   leftIcon={<ArrowLeft className="w-5 h-5 ml-1" />}
                 >
-                  מצאו את המסלול שלכם
-                </Button>
-                <Button variant="gold" size="xl" href="#lead-form">
-                  קביעת אימון ניסיון
+                  מצאו את המסלול שמתאים לכם
                 </Button>
               </div>
             </div>
@@ -99,7 +95,7 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/40 to-transparent" />
                 <div className="relative z-10 p-6 text-center space-y-2">
-                  <div className="w-14 h-14 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010] mx-auto shadow-lg backdrop-blur-sm">
+                  <div className="w-14 h-14 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010] mx-auto shadow-lg backdrop-blur-sm cursor-pointer">
                     <Play className="w-6 h-6 mr-0.5" />
                   </div>
                   <span className="text-xs font-bold text-white uppercase tracking-wider block drop-shadow-md">
@@ -113,7 +109,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 2 — FIND YOUR PROGRAM (מה מתאים לכם? עריכה מותגית)
+          SECTION 2 — PROGRAM SELECTOR (איפה מתחילים?)
           ==================================================================== */}
       <Section id="programs" variant="charcoal" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Background scratch texture */}
@@ -126,8 +122,8 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-8">
             <SectionHeader
               badge="מסלולי אימון"
-              title="מה מתאים לכם?"
-              description="בחרו את קבוצת הגיל והמטרה שלכם כדי להכיר את המסלול המותאם עבורכם."
+              title="איפה מתחילים?"
+              description="לכל אחד יש סיבה אחרת להגיע לאימון. בחרו את המסלול שמתאים לכם והכירו את האימונים, הצוות והאפשרויות שיש בפריינטה."
               align="right"
               className="mb-0"
             />
@@ -146,7 +142,7 @@ export default function HomePage() {
                 <div className="space-y-2">
                   <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון ילדים — אקדמיית פריינטה]
+                    [צילום אימון ילדים — Pariente Academy]
                   </span>
                 </div>
               </div>
@@ -155,9 +151,9 @@ export default function HomePage() {
                   <Badge variant="gold">גילאי 4–12</Badge>
                   <span className="text-xs font-bold text-zinc-500">מסלול התפתחות</span>
                 </div>
-                <h3 className="text-2xl font-extrabold text-white">ילדים</h3>
+                <h3 className="text-2xl font-extrabold text-white">ילדים | גילאי 4–12</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  ביטחון עצמי, משמעת, כבוד והתפתחות.
+                  מסגרת שבה ילדים לומדים אמנויות לחימה, מתקדמים בקצב שלהם ורוכשים ביטחון, משמעת והרגלים שממשיכים איתם גם מחוץ לאימון.
                 </p>
                 <div className="pt-2">
                   <Button
@@ -167,7 +163,7 @@ export default function HomePage() {
                     fullWidth
                     leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
-                    למסלול הילדים
+                    לאימוני הילדים
                   </Button>
                 </div>
               </div>
@@ -179,7 +175,7 @@ export default function HomePage() {
                 <div className="space-y-2">
                   <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון נוער — אקדמיית פריינטה]
+                    [צילום אימון נוער — Pariente Academy]
                   </span>
                 </div>
               </div>
@@ -188,9 +184,9 @@ export default function HomePage() {
                   <Badge variant="gold">גילאי 13–17</Badge>
                   <span className="text-xs font-bold text-zinc-500">ספורט והגנה עצמית</span>
                 </div>
-                <h3 className="text-2xl font-extrabold text-white">נוער</h3>
+                <h3 className="text-2xl font-extrabold text-white">נוער | גילאי 13–17</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  כושר, ביטחון אישי, קבוצה וכלים לחיים.
+                  אימוני אמנויות לחימה והגנה עצמית לנוער שרוצה להתחזק, לדעת להתמודד ולהיות חלק מקבוצה טובה. אפשר להתאמן ברצינות גם בלי לרצות להתחרות.
                 </p>
                 <div className="pt-2">
                   <Button
@@ -200,30 +196,30 @@ export default function HomePage() {
                     fullWidth
                     leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
                   >
-                    למסלול הנוער
+                    לאימוני הנוער
                   </Button>
                 </div>
               </div>
             </Card>
 
-            {/* Card 3 — Competitive Youth */}
+            {/* Card 3 — Competition */}
             <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010]/60 transition-all duration-300">
               <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
                   <Trophy className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום נוער תחרותי — אקדמיית פריינטה]
+                    [צילום נוער תחרותי — Pariente Academy]
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
                   <Badge variant="amber">מסלול תחרותי</Badge>
-                  <span className="text-xs font-bold text-zinc-500">גילאי 13–21</span>
+                  <span className="text-xs font-bold text-zinc-500">ספורטאים</span>
                 </div>
-                <h3 className="text-2xl font-extrabold text-white">נוער תחרותי</h3>
+                <h3 className="text-2xl font-extrabold text-white">המסלול התחרותי</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  למי שרוצה להגיע רחוק. אימונים מקצועיים ומסלול לתחרויות בארץ ובעולם.
+                  לספורטאים שרוצים לקחת את האימונים צעד קדימה. יותר אימונים, יותר מחויבות ומסלול שמוביל מתחרויות בישראל ועד לזירה הבינלאומית.
                 </p>
                 <div className="pt-2">
                   <Button
@@ -245,18 +241,18 @@ export default function HomePage() {
                 <div className="space-y-2">
                   <Users className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון בוגרים — אקדמיית פריינטה]
+                    [צילום אימון בוגרים — Pariente Academy]
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="gold">גילאי 22–45+</Badge>
-                  <span className="text-xs font-bold text-zinc-500">BJJ, MMA, Muay Thai</span>
+                  <Badge variant="gold">בוגרים</Badge>
+                  <span className="text-xs font-bold text-zinc-500">ג'ו ג'יטסו, MMA, Muay Thai</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">בוגרים</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  MMA, BJJ, Muay Thai ועוד. כושר, אמנויות לחימה וקהילה.
+                  ג'ו ג'יטסו, MMA, אגרוף תאילנדי, כושר ואימונים נוספים לאורך השבוע, לצד אירועים ופעילויות מיוחדות. למי שרוצה להתחיל להתאמן ולמי שאמנויות לחימה כבר הפכו לחלק מהחיים שלו.
                 </p>
                 <div className="pt-2">
                   <Button
@@ -276,7 +272,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות, חתימה רשמית, אריה)
+          SECTION 3 — ACADEMY APPROACH (מה שלומדים על המזרן לא נשאר על המזרן)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Background Lion Watermark */}
@@ -293,15 +289,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <Badge variant="gold">הדרך שלנו</Badge>
+
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
-                אנחנו מאמינים שאמנויות לחימה בונות הרבה מעבר ללוחמים.
+                מה שלומדים על המזרן לא נשאר על המזרן
               </h2>
-              <div className="space-y-3 text-lg text-zinc-300 font-normal leading-relaxed">
-                <p>הן בונות ביטחון.</p>
-                <p>משמעת.</p>
-                <p>יכולת להתמודד.</p>
-                <p>קהילה.</p>
-                <p className="font-bold text-white">ואנשים חזקים יותר — על המזרן ומחוצה לו.</p>
+
+              <div className="space-y-4 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
+                <p>
+                  באימון לומדים טכניקה, אבל בדרך קורים עוד הרבה דברים. לומדים להקשיב, להתמודד עם תסכול, להמשיך גם כשקשה ולהבין שהתקדמות מגיעה מעבודה שחוזרים אליה שוב ושוב.
+                </p>
+                <p>
+                  אנחנו רואים את זה אצל ילד שעולה בפעם הראשונה על המזרן, אצל נער שמוצא מקום שהוא מרגיש בו שייך ואצל מתאמן בוגר שמגיע לאימון גם אחרי יום ארוך.
+                </p>
+                <p className="font-bold text-white">
+                  זו הדרך שבה אנחנו מלמדים אמנויות לחימה בפריינטה.
+                </p>
               </div>
 
               {/* Official IDO PARIENTE Signature SVG */}
@@ -321,7 +323,7 @@ export default function HomePage() {
                   href="/academy"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
-                  הכירו את האקדמיה
+                  הכירו את Pariente Academy
                 </Button>
               </div>
             </div>
@@ -350,69 +352,36 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 4 — SOCIAL PROOF / NUMBERS (מספרים, כוכבים ומהות)
+          SECTION 4 — PARIENTE IN NUMBERS
+          (Hidden until verified numbers are available)
           ==================================================================== */}
-      <Section variant="charcoal" size="md" className="border-b border-zinc-800">
-        <Container size="default">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
-            <SectionHeader
-              badge="נתונים ומהות"
-              title="הישגים, ניסיון ומסורת"
-              description="תבנית אדריכלות הנתונים מוכנה להזנת מספרים רשמיים"
-              align="right"
-              className="mb-0"
-            />
-            {/* Official Stars SVG */}
-            {/* eslint-disable-next-html-element-for-img */}
-            <img
-              src="/images/stars.svg"
-              alt="Stars"
-              className="h-6 w-auto mt-4 md:mt-0 opacity-80"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
-              <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX+</div>
-              <div className="text-sm font-bold text-white">שנות פעילות</div>
-            </Card>
-
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
-              <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XXX+</div>
-              <div className="text-sm font-bold text-white">מתאמנים</div>
-            </Card>
-
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
-              <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX</div>
-              <div className="text-sm font-bold text-white">אלופי ישראל</div>
-            </Card>
-
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
-              <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX</div>
-              <div className="text-sm font-bold text-white">ייצוג באליפויות בינלאומיות</div>
-            </Card>
-          </div>
-        </Container>
-      </Section>
 
       {/* ====================================================================
-          SECTION 5 — COMPETITION / EXCELLENCE (מצוינות ותחרויות)
+          SECTION 5 — COMPETITIVE PATHWAY (יש מי שרוצה להתאמן. יש מי שרוצה להתחרות.)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-6">
               <Badge variant="amber">מצוינות בספורט תחרותי</Badge>
+
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
-                למי שרוצה להגיע רחוק יותר.
+                יש מי שרוצה להתאמן. <br />
+                <span className="text-[#f3c010]">יש מי שרוצה להתחרות.</span>
               </h2>
-              <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
-                Pariente Academy מפתחת לוחמים וספורטאים תחרותיים ב-MMA וב-Jiu-Jitsu, מהתחרויות הראשונות ועד לבמות הלאומיות והבינלאומיות.
-              </p>
+
+              <div className="space-y-3 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
+                <p>
+                  המסלול התחרותי מיועד לספורטאים שמוכנים לתת יותר לאימונים שלהם. מתאמנים בתדירות גבוהה, עובדים על טכניקה, כושר ואסטרטגיה תחרותית, ויוצאים להתחרות עם צוות שמלווה את הדרך.
+                </p>
+                <p>
+                  מתחילים בתחרויות בארץ. מי שמתקדם ומוכיח את עצמו יכול להמשיך גם לאליפויות ולזירה הבינלאומית.
+                </p>
+                <p className="font-bold text-white">
+                  אין קיצורי דרך במסלול הזה, וגם לא מחפשים כאלה.
+                </p>
+              </div>
+
               <div className="pt-2">
                 <Button
                   variant="primary"
@@ -420,16 +389,16 @@ export default function HomePage() {
                   href="/competition"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
-                  למסלול התחרותי
+                  הכירו את המסלול התחרותי
                 </Button>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[16/10] rounded-3xl bg-[#0d0f13] border border-zinc-800 flex flex-col items-center justify-center p-6 text-center">
+              <div className="relative aspect-[16/10] rounded-3xl bg-[#0d0f13] border border-zinc-800 flex flex-col items-center justify-center p-6 text-center shadow-xl">
                 <Trophy className="w-12 h-12 text-[#f3c010]/80 mb-2" />
                 <span className="text-xs font-bold text-zinc-400 block uppercase">
-                  [צילום אליפויות ותחרויות — אקדמיית פריינטה]
+                  [צילום תחרותי רשמי — Pariente Academy]
                 </span>
               </div>
             </div>
@@ -438,10 +407,50 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 6 — COMMUNITY (קהילה ויוזמות, טקסטורת שריטות)
+          SECTION 6 — COMMUNITY / THE PEOPLE OF PARIENTE (האנשים של פריינטה)
           ==================================================================== */}
-      <Section variant="charcoal" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
-        {/* Scratch Background Texture Overlay */}
+      <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
+        <Container size="default">
+          <div className="max-w-3xl space-y-6">
+            <Badge variant="gold">האנשים של פריינטה</Badge>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
+              האנשים של פריינטה
+            </h2>
+
+            <div className="space-y-4 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
+              <p>
+                אפשר להגיע לפריינטה בשביל ללמוד להילחם, להיכנס לכושר או להתחרות. אבל כשמתאמנים יחד לאורך זמן, נוצר גם משהו שקשה להסביר למי שעוד לא עלה על המזרן.
+              </p>
+              <p>
+                מתאמנים מתחילים לצד אנשים שנמצאים כאן כבר שנים. מתאמנים יחד, עוזרים אחד לשני ומשתפרים יחד.
+              </p>
+              <p className="font-bold text-white">
+                בסוף, האנשים שאתה פוגש בכל שבוע הם חלק גדול מהסיבה שאתה רוצה להגיע שוב לאימון.
+              </p>
+            </div>
+          </div>
+
+          {/* Real People Photography Composition */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
+            <div className="aspect-[4/3] rounded-2xl bg-[#060709] border border-zinc-800 flex items-center justify-center p-4 text-center">
+              <span className="text-xs font-bold text-zinc-500 uppercase">[צילום קהילה ומזרן]</span>
+            </div>
+            <div className="aspect-[4/3] rounded-2xl bg-[#060709] border border-zinc-800 flex items-center justify-center p-4 text-center">
+              <span className="text-xs font-bold text-zinc-500 uppercase">[צילום מתאמנים וצוות]</span>
+            </div>
+            <div className="aspect-[4/3] rounded-2xl bg-[#060709] border border-zinc-800 flex items-center justify-center p-4 text-center">
+              <span className="text-xs font-bold text-zinc-500 uppercase">[צילום אווירה באקדמיה]</span>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ====================================================================
+          SECTION 7 — MORE AT PARIENTE (עוד בפריינטה - פרויקטים ויוזמות)
+          ==================================================================== */}
+      <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
+        {/* Background scratch texture */}
         <div
           className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover"
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
@@ -449,9 +458,9 @@ export default function HomePage() {
 
         <Container size="default" className="relative z-10">
           <SectionHeader
-            badge="קהילה וחיבור"
-            title="מה שמתחיל על המזרן ממשיך הרבה אחריו."
-            description="האקדמיה היא קהילה ובית מחבר, מעבר לשעות האימון בלבד."
+            badge="יוזמות ופרויקטים"
+            title="עוד בפריינטה"
+            description="האקדמיה לא נגמרת במערכת האימונים השבועית. לאורך השנה מתקיימים בפריינטה פרויקטים, מפגשים ופעילויות שמחברים את אמנויות הלחימה לעוד חלקים בחיים."
             align="right"
           />
 
@@ -465,7 +474,7 @@ export default function HomePage() {
                 <Badge variant="gold" size="sm">סנסאי אבא</Badge>
                 <h3 className="text-2xl font-extrabold text-white">סנסאי אבא</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  אבא וילד על אותו מזרן. פרויקט שמחבר בין אמנויות לחימה לזמן משותף אמיתי.
+                  אבא וילד עולים יחד על המזרן לאימון משותף. שניהם לומדים, מתאמנים ועוברים את החוויה יחד.
                 </p>
               </div>
               <div className="pt-2">
@@ -475,7 +484,7 @@ export default function HomePage() {
                   href="/sensei-aba"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
-                  לסנסאי אבא
+                  הכירו את סנסאי אבא
                 </Button>
               </div>
             </Card>
@@ -486,10 +495,10 @@ export default function HomePage() {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <Badge variant="subtle" size="sm">יוזמה קהילתית לוחמים</Badge>
+                <Badge variant="subtle" size="sm">אחים לחיים</Badge>
                 <h3 className="text-2xl font-extrabold text-white">אחים לחיים</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  שיתוף פעולה קהילתי שמחבר אמנויות לחימה, אחווה וחזרה למסוגלות.
+                  פעילות משותפת שמחברת בין אמנויות לחימה, אימון ומפגש עם חברי עמותת אחים לחיים.
                 </p>
               </div>
               <div className="pt-2">
@@ -499,7 +508,7 @@ export default function HomePage() {
                   href="/achim-lachaim"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
                 >
-                  לסיפור המלא
+                  לסיפור של אחים לחיים
                 </Button>
               </div>
             </Card>
@@ -508,14 +517,14 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 7 — ACADEMY EXPERIENCE / GALLERY (חוויה וגלריה)
+          SECTION 8 — GALLERY (ככה זה נראה אצלנו)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800">
+      <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             badge="חוויית האקדמיה"
-            title="חיים על המזרן"
-            description="גלריית צילומים עריכתית ומעמיקה"
+            title="ככה זה נראה אצלנו"
+            description="אימונים, תחרויות, ילדים, בוגרים והרבה שעות על המזרן."
             align="right"
           />
 
@@ -530,7 +539,7 @@ export default function HomePage() {
             ].map((label, idx) => (
               <div
                 key={idx}
-                className="aspect-video rounded-2xl bg-[#0d0f13] border border-zinc-800 flex flex-col items-center justify-center p-4 text-center hover:border-zinc-700 transition-colors"
+                className="aspect-video rounded-2xl bg-[#060709] border border-zinc-800 flex flex-col items-center justify-center p-4 text-center hover:border-zinc-700 transition-colors"
               >
                 <ImageIcon className="w-6 h-6 text-zinc-500 mb-2" />
                 <span className="text-xs font-bold text-zinc-400">[{label}]</span>
@@ -545,49 +554,55 @@ export default function HomePage() {
               href="/gallery"
               leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
             >
-              לגלריה המלאה
+              לגלריה
             </Button>
           </div>
         </Container>
       </Section>
 
       {/* ====================================================================
-          SECTION 8 — GENERAL LEAD CONVERSION (טופס הרשמה/ייעוץ)
+          SECTION 9 — GENERAL LEAD CONVERSION (רוצים לעלות על המזרן?)
           ==================================================================== */}
-      <Section id="lead-form" variant="charcoal" size="lg" className="border-b border-zinc-800">
+      <Section id="lead-form" variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="narrow">
           <SectionHeader
-            badge="ייעוץ והתאמה"
-            title="רוצים להתחיל אבל לא בטוחים מאיפה?"
-            description="השאירו פרטים וספרו לנו מה אתם מחפשים. נעזור לכם למצוא את המסלול המתאים."
+            badge="הרשמה וייעוץ"
+            title="רוצים לעלות על המזרן?"
+            description="לא צריך לדעת מראש איזה אימון מתאים לכם או להגיע עם ניסיון. ספרו לנו למי אתם מחפשים אימון ונעזור לכם למצוא את המקום הנכון להתחיל ממנו."
             align="center"
           />
 
-          <GeneralLeadForm showSegmentSelector />
+          <GeneralLeadForm showSegmentSelector overrideCtaText="אני רוצה לשמוע עוד" />
         </Container>
       </Section>
 
       {/* ====================================================================
-          SECTION 9 — LOCATION / PRACTICAL INFO (מיקום ופרטי קשר)
+          SECTION 10 — PRACTICAL INFORMATION (מיקום ופרטי קשר מאומתים)
           ==================================================================== */}
-      <Section variant="dark" size="md">
+      <Section variant="charcoal" size="md">
         <Container size="default">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-right">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <MapPin className="w-4 h-4" />
                 <span>כתובת</span>
               </div>
+              <p className="text-sm text-zinc-300">{SITE_CONFIG.name}</p>
               <p className="text-sm text-zinc-300">{SITE_CONFIG.location.fullAddress}</p>
             </div>
 
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <Phone className="w-4 h-4" />
-                <span>טלפון</span>
+                <span>טלפון / WhatsApp</span>
               </div>
-              <a href={`tel:${SITE_CONFIG.contact.phone}`} className="text-sm text-zinc-300 hover:text-white block font-semibold">
-                {SITE_CONFIG.contact.phone}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[#f3c010] hover:underline block font-bold"
+              >
+                {SITE_CONFIG.contact.phone} (לחצו לפנייה ב-WhatsApp)
               </a>
             </div>
 
@@ -596,25 +611,18 @@ export default function HomePage() {
                 <Mail className="w-4 h-4" />
                 <span>אימייל</span>
               </div>
-              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-sm text-zinc-300 hover:text-white block font-semibold">
+              <a
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                className="text-sm text-zinc-300 hover:text-white block font-semibold"
+              >
                 {SITE_CONFIG.contact.email}
               </a>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
-                <Clock className="w-4 h-4" />
-                <span>שעות פעילות</span>
-              </div>
-              <p className="text-xs text-zinc-400">
-                [שעות פעילות ייקבעו ע״פ מערכת השעות הרשמית]
-              </p>
             </div>
           </div>
         </Container>
       </Section>
 
-      <MobileStickyCta segmentId="general" ctaLabel="מצאו את המסלול שלכם" targetAnchorId="#programs" />
+      <MobileStickyCta segmentId="general" ctaLabel="מצאו את המסלול שמתאים לכם" targetAnchorId="#programs" />
     </div>
   );
 }
