@@ -36,6 +36,8 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
   const config = SEGMENT_CONFIGS[selectedSegment] || SEGMENT_CONFIGS.general;
 
+  const isKidsForm = selectedSegment === "kids" || initialSegmentId === "kids";
+
   const [formData, setFormData] = useState<{
     fullName: string;
     phone: string;
@@ -79,7 +81,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       submittedAt: new Date().toISOString(),
     };
 
-    console.log("[Lead Submitted]", payload);
+    console.log("[Lead Submitted Payload]", payload);
 
     await new Promise((resolve) => setTimeout(resolve, 600));
     setIsSubmitting(false);
@@ -91,16 +93,16 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       <Card
         variant="solid"
         id={config.formAnchorId}
-        className="p-8 sm:p-10 text-center space-y-6 border-[#f3c010]/40"
+        className="p-8 sm:p-10 text-center space-y-6 border-[#f3c010]/40 bg-[#0d0f13]"
       >
         <div className="w-16 h-16 rounded-full bg-[#f3c010]/20 border border-[#f3c010] flex items-center justify-center text-[#f3c010] mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
           <Badge variant="gold">הפרטים התקבלו בהצלחה</Badge>
-          <h3 className="text-2xl sm:text-3xl font-bold text-white">תודה! נחזור אליך בהקדם</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-white">תודה! נחזור אליכם בהקדם</h3>
           <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
-            תודה <strong className="text-white">{formData.fullName}</strong>. צוות המאמנים יחזור אליך למספר <strong className="text-white">{formData.phone}</strong> בהקדם.
+            תודה <strong className="text-white">{formData.fullName}</strong>. צוות המאמנים יחזור אליכם למספר <strong className="text-white">{formData.phone}</strong> לתיאום אימון הניסיון.
           </p>
         </div>
         <Button variant="outline" size="md" onClick={() => setSubmitted(false)}>
@@ -110,6 +112,11 @@ export const LeadForm: React.FC<LeadFormProps> = ({
     );
   }
 
+  const shouldDisplayEmail = showEmail || isKidsForm;
+  const nameLabel = isKidsForm ? "שם ההורה *" : "שם מלא *";
+  const namePlaceholder = isKidsForm ? "שם מלא של ההורה" : "שם מלא";
+  const ctaText = overrideCtaText || (isKidsForm ? "לתיאום אימון ניסיון" : config.ctaLabel);
+
   return (
     <Card
       variant="solid"
@@ -118,10 +125,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
     >
       {!hideFormHeader && (
         <div className="space-y-2 text-right">
-          <Badge variant="gold" className="gap-1">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            {config.badge}
-          </Badge>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
             {overrideTitle || config.formTitle}
           </h3>
@@ -133,7 +136,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-5 text-right">
         {/* Visual Segment Selector */}
-        {(showSegmentSelector || initialSegmentId === "general") && (
+        {showSegmentSelector && (
           <SegmentSelector
             selectedSegment={selectedSegment}
             onSelectSegment={(segId) => {
@@ -145,8 +148,8 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Input
-            label="שם מלא *"
-            placeholder="שם מלא"
+            label={nameLabel}
+            placeholder={namePlaceholder}
             required
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -161,12 +164,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           />
         </div>
 
-        {/* Email field rendered only if showEmail is explicitly true */}
-        {showEmail && (
+        {/* Email Field */}
+        {shouldDisplayEmail && (
           <Input
-            label="כתובת אימייל (רשות)"
+            label="מייל *"
             type="email"
             placeholder="name@domain.co.il"
+            required={isKidsForm}
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
@@ -174,10 +178,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
         {/* Conditional Program Specific Fields */}
         {config.conditionalFields && config.conditionalFields.length > 0 && (
-          <div className="p-4 rounded-xl bg-[#060709] border border-zinc-800 space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#f3c010]">
-              פרטים נוספים למסלול שנבחר
-            </p>
+          <div className="space-y-4">
             {config.conditionalFields.map((field: ConditionalField) => (
               <div key={field.name} className="space-y-1.5">
                 <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300">
@@ -189,9 +190,9 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     required={field.required}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-[#0d0f13] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
+                    className="w-full px-4 py-3 bg-[#060709] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   >
-                    <option value="">בחרו באפשרות המתאימה...</option>
+                    <option value="">בחרו את גיל הילד/ה...</option>
                     {field.options?.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
@@ -212,7 +213,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                           className={`px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${
                             isChecked
                               ? "bg-[#f3c010] text-[#060709] border-[#f3c010]"
-                              : "bg-[#0d0f13] text-zinc-300 border-zinc-800 hover:border-zinc-700"
+                              : "bg-[#060709] text-zinc-300 border-zinc-800 hover:border-zinc-700"
                           }`}
                         >
                           {opt.label}
@@ -229,7 +230,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     placeholder={field.placeholder}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-[#0d0f13] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
+                    className="w-full px-4 py-3 bg-[#060709] border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   />
                 )}
               </div>
@@ -259,7 +260,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           fullWidth
           className="mt-2 text-base py-3.5"
         >
-          {isSubmitting ? "שולח פרטים..." : overrideCtaText || config.ctaLabel}
+          {isSubmitting ? "שולח פרטים..." : ctaText}
         </Button>
       </form>
     </Card>
