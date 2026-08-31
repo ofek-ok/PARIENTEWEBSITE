@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Section } from "@/components/sections/Section";
 import { Container } from "@/components/sections/Container";
 import { SectionHeader } from "@/components/sections/SectionHeader";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { GeneralLeadForm } from "@/components/conversion/SegmentForms";
@@ -157,7 +156,7 @@ export default function HomePage() {
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="gold">גילאי 4–12</Badge>
+                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">גילאי 4–12</span>
                   <span className="text-xs font-bold text-zinc-500">מסלול התפתחות</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">ילדים | גילאי 4–12</h3>
@@ -189,7 +188,7 @@ export default function HomePage() {
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="gold">גילאי 13–17</Badge>
+                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">גילאי 13–17</span>
                   <span className="text-xs font-bold text-zinc-500">ספורט והגנה עצמית</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">נוער | גילאי 13–17</h3>
@@ -221,7 +220,7 @@ export default function HomePage() {
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="amber">מסלול תחרותי</Badge>
+                  <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">מסלול תחרותי</span>
                   <span className="text-xs font-bold text-zinc-500">ספורטאים</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">המסלול התחרותי</h3>
@@ -253,7 +252,7 @@ export default function HomePage() {
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="gold">בוגרים</Badge>
+                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">בוגרים</span>
                   <span className="text-xs font-bold text-zinc-500">ג'ו ג'יטסו, MMA, Muay Thai</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">בוגרים</h3>
@@ -466,7 +465,6 @@ export default function HomePage() {
                 <Heart className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <Badge variant="gold" size="sm">סנסאי אבא</Badge>
                 <h3 className="text-2xl font-extrabold text-white">סנסאי אבא</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   אבא וילד עולים יחד על המזרן לאימון משותף. שניהם לומדים, מתאמנים ועוברים את החוויה יחד.
@@ -489,7 +487,6 @@ export default function HomePage() {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <Badge variant="subtle" size="sm">אחים לחיים</Badge>
                 <h3 className="text-2xl font-extrabold text-white">אחים לחיים</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   פעילות משותפת שמחברת בין אמנויות לחימה, אימון ומפגש עם חברי עמותת אחים לחיים.
