@@ -155,10 +155,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">גילאי 4–12</span>
-                  <span className="text-xs font-bold text-zinc-500">מסלול התפתחות</span>
-                </div>
                 <h3 className="text-2xl font-extrabold text-white">ילדים | גילאי 4–12</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   מסגרת שבה ילדים לומדים אמנויות לחימה, מתקדמים בקצב שלהם ורוכשים ביטחון, משמעת והרגלים שממשיכים איתם גם מחוץ לאימון.
@@ -187,10 +183,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">גילאי 13–17</span>
-                  <span className="text-xs font-bold text-zinc-500">ספורט והגנה עצמית</span>
-                </div>
                 <h3 className="text-2xl font-extrabold text-white">נוער | גילאי 13–17</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   אימוני אמנויות לחימה והגנה עצמית לנוער שרוצה להתחזק, לדעת להתמודד ולהיות חלק מקבוצה טובה. אפשר להתאמן ברצינות גם בלי לרצות להתחרות.
@@ -219,10 +211,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">מסלול תחרותי</span>
-                  <span className="text-xs font-bold text-zinc-500">ספורטאים</span>
-                </div>
                 <h3 className="text-2xl font-extrabold text-white">המסלול התחרותי</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   לספורטאים שרוצים לקחת את האימונים צעד קדימה. יותר אימונים, יותר מחויבות ומסלול שמוביל מתחרויות בישראל ועד לזירה הבינלאומית.
@@ -251,10 +239,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider">בוגרים</span>
-                  <span className="text-xs font-bold text-zinc-500">ג'ו ג'יטסו, MMA, Muay Thai</span>
-                </div>
                 <h3 className="text-2xl font-extrabold text-white">בוגרים</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   ג'ו ג'יטסו, MMA, אגרוף תאילנדי, כושר ואימונים נוספים לאורך השבוע, לצד אירועים ופעילויות מיוחדות. למי שרוצה להתחיל להתאמן ולמי שאמנויות לחימה כבר הפכו לחלק מהחיים שלו.
