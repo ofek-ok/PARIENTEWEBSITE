@@ -1,14 +1,13 @@
 import React from "react";
-import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Users, Shield, Award } from "lucide-react";
+import { ArrowLeft, Users } from "lucide-react";
 
 export interface ActivityCardProps {
   title: string;
   badge: string;
-  badgeVariant?: "blue" | "gold" | "outline" | "subtle";
+  badgeVariant?: "gold" | "amber" | "outline" | "subtle";
   targetAudience: string;
   emotionalHook: string;
   description: string;
@@ -20,17 +19,17 @@ export interface ActivityCardProps {
 export const ActivityCard: React.FC<ActivityCardProps> = ({
   title,
   badge,
-  badgeVariant = "blue",
+  badgeVariant = "gold",
   targetAudience,
   emotionalHook,
   description,
   keyPoints = [],
   ctaHref,
-  ctaLabel = "Explore Program",
+  ctaLabel = "למידע נוסף והרשמה",
 }) => {
   return (
-    <Card hoverEffect glowOnHover className="flex flex-col justify-between h-full group">
-      <div className="space-y-4">
+    <Card hoverEffect className="flex flex-col justify-between h-full group bg-[#0d0f13] border-zinc-800">
+      <div className="space-y-4 text-right">
         <div className="flex items-center justify-between gap-2">
           <Badge variant={badgeVariant}>{badge}</Badge>
           <span className="text-xs font-medium text-zinc-400 flex items-center gap-1">
@@ -66,11 +65,11 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
 
       <div className="pt-6 mt-6 border-t border-zinc-800/80">
         <Button
-          variant="outline"
+          variant="gold"
           size="md"
           href={ctaHref}
           fullWidth
-          rightIcon={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+          leftIcon={<ArrowLeft className="w-4 h-4 ml-1 group-hover:-translate-x-1 transition-transform" />}
         >
           {ctaLabel}
         </Button>

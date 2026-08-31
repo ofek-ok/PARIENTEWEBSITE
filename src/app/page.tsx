@@ -11,6 +11,7 @@ import { MobileStickyCta } from "@/components/conversion/MobileStickyCta";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
   ArrowLeft,
+  Shield,
   Trophy,
   Users,
   MapPin,
@@ -27,14 +28,24 @@ export default function HomePage() {
   return (
     <div className="space-y-0 text-right bg-[#040406]">
       {/* ====================================================================
-          SECTION 1 — HERO (תמונת תדמית רשמית, עידו פריינטה, טיפוגרפיה חזקה)
+          SECTION 1 — HERO (מותג רשמי, אריה, תמונת עידו פריינטה, טקסטורת שריטות)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-10 pb-20 lg:py-28 overflow-hidden">
         {/* Background scratch texture overlay */}
         <div
-          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover"
+          className="absolute inset-0 opacity-20 pointer-events-none bg-center bg-cover"
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
         />
+
+        {/* Subtle Lion Watermark background anchor */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.04] pointer-events-none -ml-20">
+          {/* eslint-disable-next-html-element-for-img */}
+          <img
+            src="/images/lion_crown.svg"
+            alt=""
+            className="w-[600px] h-auto object-contain"
+          />
+        </div>
 
         <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -77,10 +88,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Official Hero Image Column */}
+            {/* Official Hero Image Layered Composition */}
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/3] rounded-3xl bg-[#0d0f13] border border-zinc-800 p-1 flex flex-col items-center justify-center overflow-hidden group shadow-2xl">
-                {/* Official Pariente Hero Image */}
                 {/* eslint-disable-next-html-element-for-img */}
                 <img
                   src="/images/hero_bg.jpg"
@@ -103,16 +113,31 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 2 — FIND YOUR PROGRAM (מה מתאים לכם?)
+          SECTION 2 — FIND YOUR PROGRAM (מה מתאים לכם? עריכה מותגית)
           ==================================================================== */}
-      <Section id="programs" variant="charcoal" size="lg" className="border-b border-zinc-800">
-        <Container size="default">
-          <SectionHeader
-            badge="מסלולי אימון"
-            title="מה מתאים לכם?"
-            description="בחרו את קבוצת הגיל והמטרה שלכם כדי להכיר את המסלול המותאם עבורכם."
-            align="right"
-          />
+      <Section id="programs" variant="charcoal" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
+        {/* Background scratch texture */}
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none bg-center bg-cover"
+          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
+        />
+
+        <Container size="default" className="relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <SectionHeader
+              badge="מסלולי אימון"
+              title="מה מתאים לכם?"
+              description="בחרו את קבוצת הגיל והמטרה שלכם כדי להכיר את המסלול המותאם עבורכם."
+              align="right"
+              className="mb-0"
+            />
+            {/* eslint-disable-next-html-element-for-img */}
+            <img
+              src="/images/choose_title.svg"
+              alt=""
+              className="hidden md:block h-12 w-auto opacity-40 object-contain"
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1 — Kids */}
@@ -251,10 +276,20 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות, חתימה רשמית)
+          SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות, חתימה רשמית, אריה)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800">
-        <Container size="default">
+      <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
+        {/* Background Lion Watermark */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.03] pointer-events-none -mr-32">
+          {/* eslint-disable-next-html-element-for-img */}
+          <img
+            src="/images/logo_main.svg"
+            alt=""
+            className="w-[700px] h-auto object-contain"
+          />
+        </div>
+
+        <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <Badge variant="gold">הדרך שלנו</Badge>
@@ -315,16 +350,26 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 4 — SOCIAL PROOF / NUMBERS (מספרים ומהות)
+          SECTION 4 — SOCIAL PROOF / NUMBERS (מספרים, כוכבים ומהות)
           ==================================================================== */}
       <Section variant="charcoal" size="md" className="border-b border-zinc-800">
         <Container size="default">
-          <SectionHeader
-            badge="נתונים ומהות"
-            title="הישגים, ניסיון ומסורת"
-            description="תבנית אדריכלות הנתונים מוכנה להזנת מספרים רשמיים"
-            align="right"
-          />
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+            <SectionHeader
+              badge="נתונים ומהות"
+              title="הישגים, ניסיון ומסורת"
+              description="תבנית אדריכלות הנתונים מוכנה להזנת מספרים רשמיים"
+              align="right"
+              className="mb-0"
+            />
+            {/* Official Stars SVG */}
+            {/* eslint-disable-next-html-element-for-img */}
+            <img
+              src="/images/stars.svg"
+              alt="Stars"
+              className="h-6 w-auto mt-4 md:mt-0 opacity-80"
+            />
+          </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
@@ -398,7 +443,7 @@ export default function HomePage() {
       <Section variant="charcoal" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Scratch Background Texture Overlay */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none bg-center bg-cover"
+          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover"
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
         />
 
