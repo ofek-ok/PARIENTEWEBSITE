@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Section } from "@/components/sections/Section";
 import { Container } from "@/components/sections/Container";
 import { SectionHeader } from "@/components/sections/SectionHeader";
@@ -7,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { GeneralLeadForm } from "@/components/conversion/SegmentForms";
 import { MobileStickyCta } from "@/components/conversion/MobileStickyCta";
+import { VideoModal } from "@/components/ui/VideoModal";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
   ArrowLeft,
@@ -22,91 +25,100 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const whatsappUrl = `https://wa.me/972${SITE_CONFIG.contact.phone.replace(/[^0-9]/g, "").substring(1)}`;
 
   return (
     <div className="space-y-0 text-right bg-[#040406]">
       {/* ====================================================================
-          SECTION 1 — HERO (בית הספר הגבוה לאמנויות לחימה)
+          SECTION 1 — CINEMATIC FULL-WIDTH HERO
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-10 pb-20 lg:py-28 overflow-hidden">
-        {/* Background scratch texture overlay */}
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none bg-center bg-cover"
-          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
-        />
-
-        {/* Lion Watermark background anchor */}
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.04] pointer-events-none -ml-20">
-          {/* eslint-disable-next-html-element-for-img */}
-          <img
-            src="/images/lion_crown.svg"
-            alt=""
-            className="w-[600px] h-auto object-contain"
+      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center border-b border-zinc-800/80 overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+        {/* Full-width Background Video Layer */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <iframe
+            src="https://www.youtube.com/embed/haaRrTHKYJk?autoplay=1&mute=1&loop=1&playlist=haaRrTHKYJk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+            title="Pariente Academy Hero Background Video"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160vw] h-[160vh] max-w-none opacity-40 object-cover scale-125"
+            allow="autoplay; muted"
           />
+
+          {/* Dark Overlay Vignette for crisp text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/75 to-[#040406]/60" />
+
+          {/* Scratch Texture Overlay */}
+          <div
+            className="absolute inset-0 opacity-15 bg-center bg-cover mix-blend-overlay"
+            style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
+          />
+
+          {/* Lion Watermark background anchor */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+            {/* eslint-disable-next-html-element-for-img */}
+            <img
+              src="/images/logo_main.svg"
+              alt=""
+              className="w-[750px] sm:w-[900px] h-auto object-contain"
+            />
+          </div>
         </div>
 
-        <Container size="default" className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Text Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="flex items-center gap-3">
-                {/* eslint-disable-next-html-element-for-img */}
-                <img
-                  src="/images/lion_crown.svg"
-                  alt="Pariente Crown"
-                  className="h-8 w-auto object-contain"
-                />
-                <Badge variant="gold" size="md">
-                  Pariente Academy • כפר סבא
-                </Badge>
-              </div>
-
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] font-display">
-                בית הספר הגבוה <br />
-                <span className="text-[#f3c010]">לאמנויות לחימה</span>
-              </h1>
-
-              <p className="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
-                Pariente Academy היא בית לאנשים שבוחרים ללמוד אמנויות לחימה ברצינות. ילדים שעולים על המזרן בפעם הראשונה, בני נוער שמחפשים מסגרת ואתגר, ספורטאים שרוצים להתחרות ובוגרים שהאימון הפך לחלק מהחיים שלהם.
-              </p>
-
-              {/* Primary Action (Navigates to Program Selector) */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Button
-                  variant="primary"
-                  size="xl"
-                  href="#programs"
-                  leftIcon={<ArrowLeft className="w-5 h-5 ml-1" />}
-                >
-                  מצאו את המסלול שמתאים לכם
-                </Button>
-              </div>
+        {/* Centered Hero Content */}
+        <Container size="default" className="relative z-10 text-center">
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Crown Motif Anchor */}
+            <div className="flex justify-center">
+              {/* eslint-disable-next-html-element-for-img */}
+              <img
+                src="/images/lion_crown.svg"
+                alt="Pariente Crown"
+                className="h-10 sm:h-12 w-auto object-contain drop-shadow-lg"
+              />
             </div>
 
-            {/* Official Hero Image Layered Composition */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] rounded-3xl bg-[#0d0f13] border border-zinc-800 p-1 flex flex-col items-center justify-center overflow-hidden group shadow-2xl">
-                {/* eslint-disable-next-html-element-for-img */}
-                <img
-                  src="/images/hero_bg.jpg"
-                  alt="אימון עידו פריינטה"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/40 to-transparent" />
-                <div className="relative z-10 p-6 text-center space-y-2">
-                  <div className="w-14 h-14 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010] mx-auto shadow-lg backdrop-blur-sm cursor-pointer">
-                    <Play className="w-6 h-6 mr-0.5" />
-                  </div>
-                  <span className="text-xs font-bold text-white uppercase tracking-wider block drop-shadow-md">
-                    צפו באווירת האימונים באקדמיה
-                  </span>
-                </div>
-              </div>
+            {/* Approved Centered Title */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight leading-[1.05] font-display">
+              בית הספר הגבוה <br />
+              <span className="text-[#f3c010]">לאמנויות לחימה</span>
+            </h1>
+
+            {/* Approved Centered Body */}
+            <p className="text-base sm:text-lg lg:text-xl text-zinc-200 font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+              Pariente Academy היא בית לאנשים שבוחרים ללמוד אמנויות לחימה ברצינות. ילדים שעולים על המזרן בפעם הראשונה, בני נוער שמחפשים מסגרת ואתגר, ספורטאים שרוצים להתחרות ובוגרים שהאימון הפך לחלק מהחיים שלהם.
+            </p>
+
+            {/* Central Actions */}
+            <div className="pt-6 flex flex-wrap items-center justify-center gap-4">
+              <Button
+                variant="primary"
+                size="xl"
+                href="#programs"
+                leftIcon={<ArrowLeft className="w-5 h-5 ml-1" />}
+                className="shadow-2xl text-base sm:text-lg py-4 px-8"
+              >
+                מצאו את המסלול שמתאים לכם
+              </Button>
+
+              <Button
+                variant="gold"
+                size="xl"
+                onClick={() => setIsVideoModalOpen(true)}
+                leftIcon={<Play className="w-5 h-5 ml-1 text-[#f3c010]" />}
+                className="text-base sm:text-lg py-4 px-8"
+              >
+                צפו בסרט
+              </Button>
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
+
+      {/* Video Modal with audio & controls */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        youtubeId="haaRrTHKYJk"
+      />
 
       {/* ====================================================================
           SECTION 2 — PROGRAM SELECTOR (איפה מתחילים?)
@@ -121,9 +133,8 @@ export default function HomePage() {
         <Container size="default" className="relative z-10">
           <div className="flex items-center justify-between mb-8">
             <SectionHeader
-              badge="מסלולי אימון"
               title="איפה מתחילים?"
-              description="לכל אחד יש סיבה אחרת להגיע לאימון. בחרו את המסלול שמתאים לכם והכירו את האימונים, הצוות והאפשרויות שיש בפריינטה אקדמי אקדמי."
+              description="לכל אחד יש סיבה אחרת להגיע לאימון. בחרו את המסלול שמתאים לכם והכירו את האימונים, הצוות והאפשרויות שיש בפריינטה אקדמי."
               align="right"
               className="mb-0"
             />
@@ -288,8 +299,6 @@ export default function HomePage() {
         <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="gold">הדרך שלנו</Badge>
-
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
                 מה שלומדים על המזרן לא נשאר על המזרן
               </h2>
@@ -352,8 +361,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 4 — PARIENTE IN NUMBERS
-          (Hidden until verified numbers are available)
+          SECTION 4 — PARIENTE IN NUMBERS (Hidden until verified)
           ==================================================================== */}
 
       {/* ====================================================================
@@ -363,8 +371,6 @@ export default function HomePage() {
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <Badge variant="amber">מצוינות בספורט תחרותי</Badge>
-
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
                 יש מי שרוצה להתאמן. <br />
                 <span className="text-[#f3c010]">יש מי שרוצה להתחרות.</span>
@@ -407,15 +413,13 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 6 — COMMUNITY / THE PEOPLE OF PARIENTE (האנשים של פריינטה אקדמי אקדמי)
+          SECTION 6 — COMMUNITY / THE PEOPLE OF PARIENTE (האנשים של פריינטה אקדמי)
           ==================================================================== */}
       <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="gold">הקהילה</Badge>
-
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
-              האנשים של פריינטה אקדמי אקדמי
+              האנשים של פריינטה אקדמי
             </h2>
 
             <div className="space-y-4 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
@@ -447,7 +451,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 7 — MORE AT PARIENTE (עוד בפריינטה אקדמי אקדמי - פרויקטים ויוזמות)
+          SECTION 7 — MORE AT PARIENTE (עוד בפריינטה אקדמי)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Background scratch texture */}
@@ -458,8 +462,7 @@ export default function HomePage() {
 
         <Container size="default" className="relative z-10">
           <SectionHeader
-            badge="יוזמות ופרויקטים"
-            title="עוד בפריינטה אקדמי אקדמי"
+            title="עוד בפריינטה אקדמי"
             description="האקדמיה לא נגמרת במערכת האימונים השבועית. לאורך השנה מתקיימים בפריינטה אקדמי פרויקטים, מפגשים ופעילויות שמחברים את אמנויות הלחימה לעוד חלקים בחיים."
             align="right"
           />
@@ -522,7 +525,6 @@ export default function HomePage() {
       <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
-            badge="חוויית האקדמיה"
             title="ככה זה נראה אצלנו"
             description="אימונים, תחרויות, ילדים, בוגרים והרבה שעות על המזרן."
             align="right"
@@ -566,7 +568,6 @@ export default function HomePage() {
       <Section id="lead-form" variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="narrow">
           <SectionHeader
-            badge="הרשמה וייעוץ"
             title="רוצים לעלות על המזרן?"
             description="לא צריך לדעת מראש איזה אימון מתאים לכם או להגיע עם ניסיון. ספרו לנו למי אתם מחפשים אימון ונעזור לכם למצוא את המקום הנכון להתחיל ממנו."
             align="center"
