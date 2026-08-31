@@ -20,7 +20,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           type={type}
           ref={ref}
           className={cn(
-            "w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 placeholder-zinc-500 text-sm font-medium transition-colors focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 min-h-[48px]",
+            "w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 placeholder-zinc-500 text-sm font-medium transition-colors focus:outline-none focus:border-[#f3c010] focus:ring-1 focus:ring-[#f3c010] min-h-[48px]",
             error && "border-red-500 focus:border-red-500 focus:ring-red-500",
             className
           )}
@@ -51,7 +51,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           ref={ref}
           className={cn(
-            "w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 placeholder-zinc-500 text-sm font-medium transition-colors focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 min-h-[110px]",
+            "w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 placeholder-zinc-500 text-sm font-medium transition-colors focus:outline-none focus:border-[#f3c010] focus:ring-1 focus:ring-[#f3c010] min-h-[110px]",
             error && "border-red-500 focus:border-red-500 focus:ring-red-500",
             className
           )}

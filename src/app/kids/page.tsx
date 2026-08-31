@@ -27,7 +27,7 @@ export default function KidsPage() {
               <Badge variant="subtle">Route: /kids</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              CHILDREN&apos;S <span className="text-blue-500">DEVELOPMENT PROGRAM</span>
+              CHILDREN&apos;S <span className="text-[#f3c010]">DEVELOPMENT PROGRAM</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Not just another after-school activity. Building confidence, respect, discipline, and emotional strength for life.
@@ -54,7 +54,7 @@ export default function KidsPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <ShieldCheck className="w-8 h-8 text-blue-400" />
+              <ShieldCheck className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Anti-Bullying & Self-Defense</h3>
               <p className="text-sm text-zinc-400">
                 Practical anti-bullying strategies that build self-worth without encouraging aggression.

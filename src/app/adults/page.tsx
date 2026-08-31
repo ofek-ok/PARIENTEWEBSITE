@@ -22,11 +22,11 @@ export default function AdultsPage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Ages 22–45+</Badge>
+              <Badge variant="gold">Ages 22–45+</Badge>
               <Badge variant="subtle">Route: /adults</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              ADULT BJJ, MMA <span className="text-blue-500">& COMMUNITY TRIBE</span>
+              ADULT BJJ, MMA <span className="text-[#f3c010]">& COMMUNITY TRIBE</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               World-class instruction in Brazilian Jiu-Jitsu, MMA, and Muay Thai combined with a supportive community for adults after military service and working professionals.
@@ -44,7 +44,7 @@ export default function AdultsPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" className="space-y-3">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <Shield className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">BJJ, MMA & Muay Thai</h3>
               <p className="text-sm text-zinc-400">
                 Fundamental through advanced classes in Gi BJJ, No-Gi Grappling, Striking, and Mixed Martial Arts.
@@ -52,7 +52,7 @@ export default function AdultsPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Dumbbell className="w-8 h-8 text-blue-400" />
+              <Dumbbell className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Full-Body Conditioning</h3>
               <p className="text-sm text-zinc-400">
                 Burn calories, increase mobility, build functional core power, and relieve daily workplace stress.
@@ -60,7 +60,7 @@ export default function AdultsPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Users className="w-8 h-8 text-blue-400" />
+              <Users className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Unbeatable Community</h3>
               <p className="text-sm text-zinc-400">
                 Join a welcoming squad of men and women who train hard, support each other, and grow together.

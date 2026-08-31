@@ -19,11 +19,11 @@ export default function GalleryPage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Media & Atmosphere</Badge>
+              <Badge variant="gold">Media & Atmosphere</Badge>
               <Badge variant="subtle">Route: /gallery</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              ACADEMY <span className="text-blue-500">GALLERY</span>
+              ACADEMY <span className="text-[#f3c010]">GALLERY</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Real training footage, belt ceremonies, competition podiums, and the athletic culture of Pariente Academy.

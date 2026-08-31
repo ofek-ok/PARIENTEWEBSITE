@@ -25,8 +25,8 @@ export const EventCard: React.FC<EventCardProps> = ({
     <Card hoverEffect className="flex flex-col justify-between h-full space-y-4">
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <Badge variant="blue" size="sm" className="gap-1">
-            <Trophy className="w-3 h-3 text-blue-400" />
+          <Badge variant="gold" size="sm" className="gap-1">
+            <Trophy className="w-3 h-3 text-[#f3c010]" />
             {category}
           </Badge>
           {isPlaceholder && (
@@ -36,13 +36,13 @@ export const EventCard: React.FC<EventCardProps> = ({
           )}
         </div>
 
-        <h3 className="text-xl font-bold text-white hover:text-blue-400 transition-colors">
+        <h3 className="text-xl font-bold text-white hover:text-[#f3c010] transition-colors">
           {title}
         </h3>
 
         <div className="space-y-1.5 text-xs text-zinc-400">
           <div className="flex items-center gap-2">
-            <Calendar className="w-3.5 h-3.5 text-blue-400" />
+            <Calendar className="w-3.5 h-3.5 text-[#f3c010]" />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-2">

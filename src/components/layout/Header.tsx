@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MAIN_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { MobileNav } from "./MobileNav";
-import { Shield, ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface HeaderProps {
@@ -47,25 +47,20 @@ export const Header: React.FC<HeaderProps> = ({
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-[#060709]/98 border-zinc-800 py-3 shadow-2xl"
-          : "bg-gradient-to-b from-[#060709] via-[#060709]/80 to-transparent border-transparent py-4 sm:py-5"
+          ? "bg-[#040406]/98 border-zinc-800/90 py-2.5 shadow-2xl"
+          : "bg-gradient-to-b from-[#040406] via-[#040406]/90 to-transparent border-transparent py-3 sm:py-4"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo Mark (Right side in RTL) */}
+          {/* Official Pariente Lion Crest Logo (Right side in RTL) */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-[#f3c010]/15 border border-[#f3c010]/40 flex items-center justify-center text-[#f3c010] group-hover:bg-[#f3c010] group-hover:text-[#060709] transition-all shadow-md">
-              <Shield className="w-5 h-5" />
-            </div>
-            <div className="flex flex-col text-right">
-              <span className="text-base sm:text-lg font-black tracking-tight text-white uppercase group-hover:text-[#f3c010] transition-colors font-display">
-                PARIENTE ACADEMY
-              </span>
-              <span className="text-[10px] tracking-widest uppercase font-bold text-zinc-400">
-                אקדמיית פריינטה • כפר סבא
-              </span>
-            </div>
+            {/* eslint-disable-next-html-element-for-img */}
+            <img
+              src="/images/logo_main.svg"
+              alt="Pariente Academy Logo"
+              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation Links (Middle in RTL) */}
@@ -77,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseLeave={() => setProgramsOpen(false)}
             >
               <button
-                className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-zinc-300 hover:text-[#f3c010] transition-colors rounded-lg hover:bg-zinc-900/80"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-zinc-200 hover:text-[#f3c010] transition-colors rounded-lg hover:bg-zinc-900/80"
                 onClick={() => setProgramsOpen((prev) => !prev)}
               >
                 <span>מסלולי אימון</span>
@@ -123,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 text-sm font-bold text-zinc-300 hover:text-[#f3c010] transition-colors rounded-lg hover:bg-zinc-900/80"
+                className="px-3 py-2 text-sm font-bold text-zinc-200 hover:text-[#f3c010] transition-colors rounded-lg hover:bg-zinc-900/80"
               >
                 {item.label}
               </Link>
@@ -134,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${SITE_CONFIG.contact.phone}`}
-              className="flex items-center gap-2 text-xs font-bold text-zinc-300 hover:text-[#f3c010] transition-colors py-2 px-3 rounded-lg hover:bg-zinc-900/80"
+              className="flex items-center gap-2 text-xs font-bold text-zinc-200 hover:text-[#f3c010] transition-colors py-2 px-3 rounded-lg hover:bg-zinc-900/80"
             >
               <Phone className="w-3.5 h-3.5 text-[#f3c010]" />
               <span>{SITE_CONFIG.contact.phone}</span>

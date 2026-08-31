@@ -22,7 +22,7 @@ export const StatBlock: React.FC<StatBlockProps> = ({
           Content Pending
         </Badge>
       )}
-      <div className="text-4xl sm:text-5xl font-black text-white tracking-tight text-blue-500 font-display">
+      <div className="text-4xl sm:text-5xl font-black text-white tracking-tight text-[#f3c010] font-display">
         {number}
       </div>
       <div className="text-sm font-bold text-zinc-200 uppercase tracking-wider mt-2">

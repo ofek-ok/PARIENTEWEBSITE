@@ -20,9 +20,9 @@ export default function AcademyPage() {
       <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="space-y-4 max-w-3xl">
-            <Badge variant="blue">Route: /academy</Badge>
+            <Badge variant="gold">Route: /academy</Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              ABOUT <span className="text-blue-500">PARIENTE ACADEMY</span>
+              ABOUT <span className="text-[#f3c010]">PARIENTE ACADEMY</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed">
               Founded in 2015 by Ido Pariente (&quot;The Hebrew Hammer&quot;), Pariente Academy is Israel&apos;s premier high-performance combat sports academy.
@@ -40,27 +40,27 @@ export default function AcademyPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" className="space-y-3">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <Shield className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Ido Pariente</h3>
-              <p className="text-xs font-semibold text-blue-400 uppercase">Head Coach & BJJ 2nd Degree Black Belt</p>
+              <p className="text-xs font-semibold text-[#f3c010] uppercase">Head Coach & BJJ 2nd Degree Black Belt</p>
               <p className="text-sm text-zinc-400">
                 Over 25 years of professional fighting and coaching experience (&quot;The Hebrew Hammer&quot;).
               </p>
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Award className="w-8 h-8 text-blue-400" />
+              <Award className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Championship Standards</h3>
-              <p className="text-xs font-semibold text-blue-400 uppercase">National & International Titles</p>
+              <p className="text-xs font-semibold text-[#f3c010] uppercase">National & International Titles</p>
               <p className="text-sm text-zinc-400">
                 Training national BJJ champions, MMA contenders, and elite martial artists across all ages.
               </p>
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <MapPin className="w-8 h-8 text-blue-400" />
+              <MapPin className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Kfar Saba HQ</h3>
-              <p className="text-xs font-semibold text-blue-400 uppercase">{SITE_CONFIG.location.fullAddress}</p>
+              <p className="text-xs font-semibold text-[#f3c010] uppercase">{SITE_CONFIG.location.fullAddress}</p>
               <p className="text-sm text-zinc-400">
                 State-of-the-art mats, cage equipment, and family-welcoming atmosphere.
               </p>

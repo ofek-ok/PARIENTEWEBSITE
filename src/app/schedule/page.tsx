@@ -19,11 +19,11 @@ export default function SchedulePage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Weekly Timetable</Badge>
+              <Badge variant="gold">Weekly Timetable</Badge>
               <Badge variant="subtle">Route: /schedule</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              TRAINING <span className="text-blue-500">SCHEDULE</span>
+              TRAINING <span className="text-[#f3c010]">SCHEDULE</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Explore session times across Kids, Teens, Competition Track, Adults BJJ, MMA, No-Gi, and Muay Thai at our Kfar Saba academy.

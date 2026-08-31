@@ -22,7 +22,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     <Card hoverEffect className="relative flex flex-col justify-between h-full bg-zinc-900/80 border-zinc-800">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <Quote className="w-8 h-8 text-blue-500/40" />
+          <Quote className="w-8 h-8 text-[#f3c010]/40" />
           {isPlaceholder && (
             <Badge variant="subtle" size="sm">
               Placeholder
@@ -39,7 +39,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
           <h4 className="text-sm font-bold text-white">{authorName}</h4>
           <p className="text-xs text-zinc-400">{authorRole}</p>
         </div>
-        <Badge variant="blue" size="sm">
+        <Badge variant="gold" size="sm">
           {programTag}
         </Badge>
       </div>

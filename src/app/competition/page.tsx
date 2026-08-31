@@ -26,7 +26,7 @@ export default function CompetitionPage() {
               <Badge variant="subtle">Route: /competition</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              COMPETITIVE YOUTH <span className="text-blue-500">& PRO TRACK</span>
+              COMPETITIVE YOUTH <span className="text-[#f3c010]">& PRO TRACK</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               For athletes dedicated to serious competition, high performance, and winning national and international titles.
@@ -43,7 +43,7 @@ export default function CompetitionPage() {
             description="Championship-level coaching under Ido Pariente, structured sparring cycles, weight management, and mental toughness."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card variant="glass" className="space-y-3 border-blue-500/30">
+            <Card variant="glass" className="space-y-3 border-[#f3c010]/30">
               <Trophy className="w-8 h-8 text-amber-400" />
               <h3 className="text-lg font-bold text-white">Championship Pedigree</h3>
               <p className="text-sm text-zinc-400">
@@ -51,16 +51,16 @@ export default function CompetitionPage() {
               </p>
             </Card>
 
-            <Card variant="glass" className="space-y-3 border-blue-500/30">
-              <Zap className="w-8 h-8 text-blue-400" />
+            <Card variant="glass" className="space-y-3 border-[#f3c010]/30">
+              <Zap className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">High-Intensity Sparring</h3>
               <p className="text-sm text-zinc-400">
                 Dedicated competition rounds, technical game-planning, video analysis, and elite conditioning.
               </p>
             </Card>
 
-            <Card variant="glass" className="space-y-3 border-blue-500/30">
-              <Crosshair className="w-8 h-8 text-blue-400" />
+            <Card variant="glass" className="space-y-3 border-[#f3c010]/30">
+              <Crosshair className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Mindset & Discipline</h3>
               <p className="text-sm text-zinc-400">
                 Developing professional athlete discipline, weight cut protocols, and tactical resilience under pressure.

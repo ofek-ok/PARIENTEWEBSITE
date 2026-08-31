@@ -11,7 +11,6 @@ import { MobileStickyCta } from "@/components/conversion/MobileStickyCta";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
   ArrowLeft,
-  Shield,
   Trophy,
   Users,
   MapPin,
@@ -26,18 +25,32 @@ import {
 
 export default function HomePage() {
   return (
-    <div className="space-y-0 text-right bg-[#060709]">
+    <div className="space-y-0 text-right bg-[#040406]">
       {/* ====================================================================
-          SECTION 1 — HERO (תמונת תדמית רשמית, טיפוגרפיה חזקה)
+          SECTION 1 — HERO (תמונת תדמית רשמית, עידו פריינטה, טיפוגרפיה חזקה)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-12 pb-20 lg:py-28">
-        <Container size="default">
+      <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-10 pb-20 lg:py-28 overflow-hidden">
+        {/* Background scratch texture overlay */}
+        <div
+          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover"
+          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
+        />
+
+        <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Text Column */}
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="gold" size="md">
-                אקדמיית פריינטה • כפר סבא
-              </Badge>
+              <div className="flex items-center gap-3">
+                {/* eslint-disable-next-html-element-for-img */}
+                <img
+                  src="/images/lion_crown.svg"
+                  alt="Pariente Crown"
+                  className="h-8 w-auto object-contain"
+                />
+                <Badge variant="gold" size="md">
+                  אקדמיית פריינטה • כפר סבא
+                </Badge>
+              </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] font-display">
                 יותר ממועדון. <br />
@@ -64,19 +77,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Authentic Photography/Video Placeholder Column */}
+            {/* Official Hero Image Column */}
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/3] rounded-3xl bg-[#0d0f13] border border-zinc-800 p-1 flex flex-col items-center justify-center overflow-hidden group shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#060709] via-[#0d0f13] to-amber-950/20 flex flex-col items-center justify-center p-6 text-center space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-[#f3c010]/15 border border-[#f3c010]/40 flex items-center justify-center text-[#f3c010] group-hover:bg-[#f3c010] group-hover:text-[#060709] transition-colors">
-                    <Play className="w-7 h-7 mr-0.5" />
+                {/* Official Pariente Hero Image */}
+                {/* eslint-disable-next-html-element-for-img */}
+                <img
+                  src="/images/hero_bg.jpg"
+                  alt="אימון עידו פריינטה"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/40 to-transparent" />
+                <div className="relative z-10 p-6 text-center space-y-2">
+                  <div className="w-14 h-14 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010] mx-auto shadow-lg backdrop-blur-sm">
+                    <Play className="w-6 h-6 mr-0.5" />
                   </div>
-                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
-                    [וידאו תדמיתי ראשי — אקדמיית פריינטה]
+                  <span className="text-xs font-bold text-white uppercase tracking-wider block drop-shadow-md">
+                    צפו באווירת האימונים באקדמיה
                   </span>
-                  <p className="text-[11px] text-zinc-500 max-w-xs">
-                    צילומי אימון, תחרות ואווירה אמיתית יוטמעו בשלב סופי
-                  </p>
                 </div>
               </div>
             </div>
@@ -102,7 +120,7 @@ export default function HomePage() {
               <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
                   <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-500 block uppercase">
+                  <span className="text-xs font-bold text-zinc-400 block uppercase">
                     [צילום אימון ילדים — אקדמיית פריינטה]
                   </span>
                 </div>
@@ -135,7 +153,7 @@ export default function HomePage() {
               <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
                   <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-500 block uppercase">
+                  <span className="text-xs font-bold text-zinc-400 block uppercase">
                     [צילום אימון נוער — אקדמיית פריינטה]
                   </span>
                 </div>
@@ -168,7 +186,7 @@ export default function HomePage() {
               <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
                   <Trophy className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-500 block uppercase">
+                  <span className="text-xs font-bold text-zinc-400 block uppercase">
                     [צילום נוער תחרותי — אקדמיית פריינטה]
                   </span>
                 </div>
@@ -201,7 +219,7 @@ export default function HomePage() {
               <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
                   <Users className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-500 block uppercase">
+                  <span className="text-xs font-bold text-zinc-400 block uppercase">
                     [צילום אימון בוגרים — אקדמיית פריינטה]
                   </span>
                 </div>
@@ -233,7 +251,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות)
+          SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות, חתימה רשמית)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
@@ -250,6 +268,17 @@ export default function HomePage() {
                 <p>קהילה.</p>
                 <p className="font-bold text-white">ואנשים חזקים יותר — על המזרן ומחוצה לו.</p>
               </div>
+
+              {/* Official IDO PARIENTE Signature SVG */}
+              <div className="pt-2">
+                {/* eslint-disable-next-html-element-for-img */}
+                <img
+                  src="/images/ido_pariente_signature.svg"
+                  alt="Ido Pariente Signature"
+                  className="h-16 w-auto object-contain my-2"
+                />
+              </div>
+
               <div className="pt-2">
                 <Button
                   variant="outline"
@@ -263,11 +292,20 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl bg-[#0d0f13] border border-zinc-800 flex items-center justify-center p-6 text-center shadow-xl">
-                <div className="space-y-2">
-                  <Shield className="w-12 h-12 text-[#f3c010] mx-auto" />
-                  <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום רשמי — ראש האקדמיה עידו פריינטה]
+              <div className="relative aspect-[4/5] rounded-3xl bg-[#0d0f13] border border-zinc-800 overflow-hidden shadow-xl group">
+                {/* eslint-disable-next-html-element-for-img */}
+                <img
+                  src="/images/mma_action.jpg"
+                  alt="עידו פריינטה"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-transparent to-transparent" />
+                <div className="absolute bottom-6 right-6 left-6 text-right">
+                  <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider block">
+                    {SITE_CONFIG.founder}
+                  </span>
+                  <span className="text-sm font-bold text-white block">
+                    {SITE_CONFIG.founderTitle}
                   </span>
                 </div>
               </div>
@@ -355,10 +393,16 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 6 — COMMUNITY (קהילה ויוזמות)
+          SECTION 6 — COMMUNITY (קהילה ויוזמות, טקסטורת שריטות)
           ==================================================================== */}
-      <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
-        <Container size="default">
+      <Section variant="charcoal" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
+        {/* Scratch Background Texture Overlay */}
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none bg-center bg-cover"
+          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
+        />
+
+        <Container size="default" className="relative z-10">
           <SectionHeader
             badge="קהילה וחיבור"
             title="מה שמתחיל על המזרן ממשיך הרבה אחריו."

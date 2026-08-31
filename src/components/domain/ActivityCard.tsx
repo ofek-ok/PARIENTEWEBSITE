@@ -40,10 +40,10 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+          <h3 className="text-2xl font-bold text-white group-hover:text-[#f3c010] transition-colors">
             {title}
           </h3>
-          <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mt-1">
+          <p className="text-xs font-semibold text-[#f3c010] uppercase tracking-wider mt-1">
             {emotionalHook}
           </p>
         </div>
@@ -56,7 +56,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           <ul className="space-y-2 pt-2 border-t border-zinc-800/60">
             {keyPoints.map((point, index) => (
               <li key={index} className="text-xs text-zinc-300 flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f3c010] mt-1.5 shrink-0" />
                 <span>{point}</span>
               </li>
             ))}

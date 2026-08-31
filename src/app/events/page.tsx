@@ -19,11 +19,11 @@ export default function EventsPage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Academy Calendar</Badge>
+              <Badge variant="gold">Academy Calendar</Badge>
               <Badge variant="subtle">Route: /events</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              EVENTS <span className="text-blue-500">& COMPETITIONS</span>
+              EVENTS <span className="text-[#f3c010]">& COMPETITIONS</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Stay updated on upcoming BJJ championships, MMA fight nights, masterclass seminars, open mats, and academy events.

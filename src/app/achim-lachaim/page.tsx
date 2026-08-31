@@ -25,7 +25,7 @@ export default function AchimLaChaimPage() {
               <Badge variant="subtle">Route: /achim-lachaim</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              ACHIM LACHAIM <span className="text-blue-500 font-normal">אחים לחיים</span>
+              ACHIM LACHAIM <span className="text-[#f3c010] font-normal">אחים לחיים</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Supporting the physical and emotional recovery of wounded IDF veterans through martial arts, martial camaraderie, and brotherhood.
@@ -43,7 +43,7 @@ export default function AchimLaChaimPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" className="space-y-3">
-              <HeartHandshake className="w-8 h-8 text-blue-400" />
+              <HeartHandshake className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Physical Rehabilitation</h3>
               <p className="text-sm text-zinc-400">
                 Customized Brazilian Jiu-Jitsu and grappling movements tailored for injury recovery and physical resilience.
@@ -51,7 +51,7 @@ export default function AchimLaChaimPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <Shield className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Mental & Emotional Support</h3>
               <p className="text-sm text-zinc-400">
                 A safe, respectful environment helping veterans rebuild focus, confidence, and camaraderie.
@@ -59,7 +59,7 @@ export default function AchimLaChaimPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Heart className="w-8 h-8 text-blue-400" />
+              <Heart className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Community & Respect</h3>
               <p className="text-sm text-zinc-400">
                 Pariente Academy&apos;s commitment to giving back to those who defended our home and nation.

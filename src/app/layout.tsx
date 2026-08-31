@@ -54,7 +54,7 @@ export default function RootLayout({
       dir="rtl"
       className={`${rubik.variable} ${plusJakarta.variable} ${inter.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#08090b] text-zinc-100 font-sans antialiased flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+      <body className="min-h-screen bg-[#08090b] text-zinc-100 font-sans antialiased flex flex-col justify-between selection:bg-[#f3c010] selection:text-white">
         <Header />
         <main className="flex-grow pt-[72px] sm:pt-[84px]">{children}</main>
         <Footer />

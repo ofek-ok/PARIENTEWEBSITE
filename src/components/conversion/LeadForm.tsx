@@ -87,13 +87,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       <Card
         variant="solid"
         id={config.formAnchorId}
-        className="p-8 sm:p-10 text-center space-y-6 border-blue-500/40"
+        className="p-8 sm:p-10 text-center space-y-6 border-[#f3c010]/40"
       >
-        <div className="w-16 h-16 rounded-full bg-blue-600/20 border border-blue-500 flex items-center justify-center text-blue-400 mx-auto">
+        <div className="w-16 h-16 rounded-full bg-[#f3c010]/15 border border-[#f3c010] flex items-center justify-center text-[#f3c010] mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
-          <Badge variant="blue">הפרטים התקבלו בהצלחה</Badge>
+          <Badge variant="gold">הפרטים התקבלו בהצלחה</Badge>
           <h3 className="text-2xl sm:text-3xl font-bold text-white">נתראה על המזרן!</h3>
           <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
             תודה <strong className="text-white">{formData.fullName}</strong>. צוות המאמנים של האקדמיה יחזור אליך למספר <strong className="text-white">{formData.phone}</strong> בהקדם לתיאום וקביעת המפגש.
@@ -113,7 +113,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       className={`p-6 sm:p-10 space-y-6 border-zinc-800 bg-[#101216] ${className || ""}`}
     >
       <div className="space-y-2 text-right">
-        <Badge variant="blue" className="gap-1">
+        <Badge variant="gold" className="gap-1">
           <ShieldCheck className="w-3.5 h-3.5" />
           {config.badge}
         </Badge>
@@ -166,7 +166,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         {/* Conditional Program Specific Fields */}
         {config.conditionalFields && config.conditionalFields.length > 0 && (
           <div className="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-blue-400">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#f3c010]">
               פרטים נוספים למסלול שנבחר
             </p>
             {config.conditionalFields.map((field: ConditionalField) => (
@@ -180,7 +180,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     required={field.required}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-blue-500 min-h-[48px]"
+                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   >
                     <option value="">בחרו באפשרות המתאימה...</option>
                     {field.options?.map((opt) => (
@@ -202,7 +202,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                           onClick={() => handleConditionalChange(field.name, opt.value)}
                           className={`px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${
                             isChecked
-                              ? "bg-blue-600 text-white border-blue-500"
+                              ? "bg-[#f3c010] text-white border-[#f3c010]"
                               : "bg-zinc-950 text-zinc-300 border-zinc-800 hover:border-zinc-700"
                           }`}
                         >
@@ -220,7 +220,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                     placeholder={field.placeholder}
                     value={formData.conditionalValues[field.name] || ""}
                     onChange={(e) => handleConditionalChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-blue-500 min-h-[48px]"
+                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
                   />
                 )}
               </div>

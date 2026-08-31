@@ -34,13 +34,13 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
           className="group relative aspect-video bg-zinc-900/90 border-zinc-800 p-0 overflow-hidden flex flex-col justify-end"
         >
           {/* Visual Placeholder Box */}
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950/30 flex flex-col items-center justify-center p-6 text-center space-y-3 group-hover:scale-105 transition-transform duration-500">
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-amber-950/30 flex flex-col items-center justify-center p-6 text-center space-y-3 group-hover:scale-105 transition-transform duration-500">
             {item.type === "video" ? (
-              <div className="w-12 h-12 rounded-full bg-blue-600/30 border border-blue-400 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <div className="w-12 h-12 rounded-full bg-[#f3c010]/20 border border-[#f3c010] flex items-center justify-center text-[#f3c010] group-hover:bg-[#f3c010] group-hover:text-white transition-colors">
                 <Play className="w-5 h-5 ml-0.5" />
               </div>
             ) : (
-              <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:border-blue-500/50 group-hover:text-blue-400 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:border-[#f3c010]/50 group-hover:text-[#f3c010] transition-colors">
                 <ImageIcon className="w-5 h-5" />
               </div>
             )}
@@ -51,10 +51,10 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
 
           {/* Overlay Info */}
           <div className="relative z-10 p-4 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent space-y-1">
-            <Badge variant="blue" size="sm">
+            <Badge variant="gold" size="sm">
               {item.category}
             </Badge>
-            <h4 className="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">
+            <h4 className="text-sm font-bold text-white group-hover:text-[#f3c010] transition-colors">
               {item.title}
             </h4>
           </div>

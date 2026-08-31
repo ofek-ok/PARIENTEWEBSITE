@@ -35,12 +35,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   if (submitted) {
     return (
-      <Card variant="glass" className="p-8 sm:p-10 text-center space-y-6 border-blue-500/40">
-        <div className="w-16 h-16 rounded-full bg-blue-600/20 border border-blue-500 flex items-center justify-center text-blue-400 mx-auto">
+      <Card variant="glass" className="p-8 sm:p-10 text-center space-y-6 border-[#f3c010]/40">
+        <div className="w-16 h-16 rounded-full bg-[#f3c010]/15 border border-[#f3c010] flex items-center justify-center text-[#f3c010] mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
-          <Badge variant="blue">Registration Received</Badge>
+          <Badge variant="gold">Registration Received</Badge>
           <h3 className="text-2xl font-bold text-white">We&apos;ll See You On The Mat!</h3>
           <p className="text-sm text-zinc-300 max-w-md mx-auto">
             Thank you, {formData.fullName || "there"}. Our academy team will contact you at {formData.phone || "your phone number"} shortly to confirm your session schedule.
@@ -56,7 +56,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <Card variant="glass" className="p-6 sm:p-10 space-y-6 border-zinc-800">
       <div className="space-y-2">
-        <Badge variant="blue" className="gap-1">
+        <Badge variant="gold" className="gap-1">
           <ShieldCheck className="w-3.5 h-3.5" />
           No Risk • Free Trial Session
         </Badge>
@@ -98,7 +98,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           <select
             value={formData.program}
             onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-            className="w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-blue-500 min-h-[48px]"
+            className="w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
           >
             <option value="general">Select Program...</option>
             <option value="kids">Children (Ages 4–12)</option>

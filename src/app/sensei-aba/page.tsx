@@ -26,7 +26,7 @@ export default function SenseiAbaPage() {
               <Badge variant="subtle">Route: /sensei-aba</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              SENSEI ABA <span className="text-blue-500 font-normal">סנסי אבא</span>
+              SENSEI ABA <span className="text-[#f3c010] font-normal">סנסי אבא</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               A unique martial arts initiative empowering fathers and their children to train together, bond deeply, and build lifelong values of trust and mutual respect.
@@ -52,7 +52,7 @@ export default function SenseiAbaPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <Shield className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Mutual Trust & Leadership</h3>
               <p className="text-sm text-zinc-400">
                 Fathers lead by example while building deep mutual trust through martial arts drills.

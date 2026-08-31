@@ -32,11 +32,17 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
       {/* Slide-out Backdrop Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 top-[73px] z-50 bg-[#08090b]/98 backdrop-blur-xl border-t border-zinc-800/80 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200 text-right">
+        <div className="fixed inset-0 top-[65px] z-50 bg-[#040406]/98 backdrop-blur-xl border-t border-zinc-800/80 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200 text-right">
           <div className="p-6 space-y-6">
-            <div className="space-y-1 pb-4 border-b border-zinc-800/60">
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-400">
-                מסלולים ועמודי האקדמיה
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-800/60">
+              {/* eslint-disable-next-html-element-for-img */}
+              <img
+                src="/images/logo_main.svg"
+                alt="Pariente Academy"
+                className="h-10 w-auto object-contain"
+              />
+              <p className="text-xs font-bold uppercase tracking-widest text-[#f3c010]">
+                תפריט ניווט
               </p>
             </div>
 
@@ -67,7 +73,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </div>
 
           {/* Fixed bottom action strip inside drawer */}
-          <div className="p-6 bg-[#090a0c] border-t border-zinc-800/80 space-y-3">
+          <div className="p-6 bg-[#060709] border-t border-zinc-800/80 space-y-3">
             <Button
               variant="primary"
               size="lg"
@@ -83,11 +89,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                 href={`tel:${SITE_CONFIG.contact.phone}`}
                 className="flex items-center gap-1.5 hover:text-white transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-blue-400" />
+                <Phone className="w-3.5 h-3.5 text-[#f3c010]" />
                 <span>{SITE_CONFIG.contact.phone}</span>
               </a>
               <span className="flex items-center gap-1 text-zinc-500">
-                <Shield className="w-3.5 h-3.5 text-blue-500/80" />
+                <Shield className="w-3.5 h-3.5 text-[#f3c010]/80" />
                 {SITE_CONFIG.location.city}
               </span>
             </div>

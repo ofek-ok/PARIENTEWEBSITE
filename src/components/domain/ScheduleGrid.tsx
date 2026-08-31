@@ -54,7 +54,7 @@ export const ScheduleGrid: React.FC = () => {
       {/* Mode & Filter Controls */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-zinc-900/80 border border-zinc-800 rounded-2xl">
         <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
-          <Filter className="w-4 h-4 text-blue-400 shrink-0 mr-1" />
+          <Filter className="w-4 h-4 text-[#f3c010] shrink-0 mr-1" />
           {[
             { id: "all", label: "All Classes" },
             { id: "kids", label: "Kids (4–12)" },
@@ -68,7 +68,7 @@ export const ScheduleGrid: React.FC = () => {
               onClick={() => setActiveFilter(tab.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                 activeFilter === tab.id
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#f3c010] text-white"
                   : "bg-zinc-800 text-zinc-400 hover:text-white"
               }`}
             >
@@ -89,7 +89,7 @@ export const ScheduleGrid: React.FC = () => {
           <button
             onClick={() => setViewMode("arbox")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors ${
-              viewMode === "arbox" ? "bg-blue-600 text-white" : "bg-zinc-800 text-zinc-300 hover:text-white"
+              viewMode === "arbox" ? "bg-[#f3c010] text-white" : "bg-zinc-800 text-zinc-300 hover:text-white"
             }`}
           >
             <span>Arbox Live App</span>
@@ -99,10 +99,10 @@ export const ScheduleGrid: React.FC = () => {
       </div>
 
       {viewMode === "arbox" ? (
-        <Card variant="glass" className="p-2 sm:p-4 border-blue-500/30 overflow-hidden">
+        <Card variant="glass" className="p-2 sm:p-4 border-[#f3c010]/30 overflow-hidden">
           <div className="flex items-center justify-between pb-3 px-2 border-b border-zinc-800">
             <span className="text-xs font-semibold text-zinc-400">Live Arbox Registration Portal</span>
-            <Badge variant="blue" size="sm">
+            <Badge variant="gold" size="sm">
               Live Embed
             </Badge>
           </div>
@@ -122,7 +122,7 @@ export const ScheduleGrid: React.FC = () => {
               <Card key={day} variant="glass" className="space-y-4 border-zinc-800">
                 <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
                   <h3 className="text-lg font-extrabold text-white flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-blue-400" />
+                    <Calendar className="w-4 h-4 text-[#f3c010]" />
                     {day}
                   </h3>
                   <Badge variant="subtle" size="sm">
@@ -134,13 +134,13 @@ export const ScheduleGrid: React.FC = () => {
                   {daySessions.map((session, idx) => (
                     <div
                       key={idx}
-                      className="p-3 rounded-xl bg-zinc-900/90 border border-zinc-800/80 hover:border-blue-500/40 transition-colors flex items-center justify-between"
+                      className="p-3 rounded-xl bg-zinc-900/90 border border-zinc-800/80 hover:border-[#f3c010]/40 transition-colors flex items-center justify-between"
                     >
                       <div className="space-y-0.5">
                         <span className="text-sm font-bold text-white block">
                           {session.title}
                         </span>
-                        <div className="flex items-center gap-1.5 text-xs text-blue-400 font-semibold">
+                        <div className="flex items-center gap-1.5 text-xs text-[#f3c010] font-semibold">
                           <Clock className="w-3 h-3" />
                           <span>{session.time}</span>
                         </div>

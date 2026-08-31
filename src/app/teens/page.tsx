@@ -22,11 +22,11 @@ export default function TeensPage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Ages 13–17</Badge>
+              <Badge variant="gold">Ages 13–17</Badge>
               <Badge variant="subtle">Route: /teens</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              TEENAGERS <span className="text-blue-500">SPORT & SELF DEFENSE</span>
+              TEENAGERS <span className="text-[#f3c010]">SPORT & SELF DEFENSE</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               Build true confidence, athletic conditioning, practical self-defense, and strong social connections in an empowering environment.
@@ -44,7 +44,7 @@ export default function TeensPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" className="space-y-3">
-              <Flame className="w-8 h-8 text-blue-400" />
+              <Flame className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Peak Athletic Fitness</h3>
               <p className="text-sm text-zinc-400">
                 Functional strength, agility, cardio endurance, and body awareness that translates to all sports.
@@ -52,7 +52,7 @@ export default function TeensPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Shield className="w-8 h-8 text-blue-400" />
+              <Shield className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Realistic Self-Defense</h3>
               <p className="text-sm text-zinc-400">
                 Proven Brazilian Jiu-Jitsu and striking techniques for real-world confidence and personal safety.
@@ -60,7 +60,7 @@ export default function TeensPage() {
             </Card>
 
             <Card variant="glass" className="space-y-3">
-              <Users className="w-8 h-8 text-blue-400" />
+              <Users className="w-8 h-8 text-[#f3c010]" />
               <h3 className="text-lg font-bold text-white">Positive Social Tribe</h3>
               <p className="text-sm text-zinc-400">
                 Train alongside peers who uplift each other, build lifelong friendships, and share healthy habits.

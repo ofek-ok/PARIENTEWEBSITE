@@ -22,11 +22,11 @@ export default function ContactPage() {
         <Container size="default">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="blue">Get In Touch</Badge>
+              <Badge variant="gold">Get In Touch</Badge>
               <Badge variant="subtle">Route: /contact</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display uppercase">
-              CONTACT <span className="text-blue-500">PARIENTE ACADEMY</span>
+              CONTACT <span className="text-[#f3c010]">PARIENTE ACADEMY</span>
             </h1>
             <p className="text-lg text-zinc-300 leading-relaxed font-medium">
               We&apos;re here to answer your questions, schedule trial sessions, and welcome you to our Kfar Saba mat.
@@ -48,7 +48,7 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 <Card variant="glass" className="flex items-start gap-4 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f3c010]/15 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010] shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -58,14 +58,14 @@ export default function ContactPage() {
                 </Card>
 
                 <Card variant="glass" className="flex items-start gap-4 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f3c010]/15 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-white uppercase tracking-wider">Phone / WhatsApp</h3>
                     <a
                       href={`tel:${SITE_CONFIG.contact.phone}`}
-                      className="text-sm text-blue-400 hover:underline mt-1 block font-semibold"
+                      className="text-sm text-[#f3c010] hover:underline mt-1 block font-semibold"
                     >
                       {SITE_CONFIG.contact.phone}
                     </a>
@@ -73,14 +73,14 @@ export default function ContactPage() {
                 </Card>
 
                 <Card variant="glass" className="flex items-start gap-4 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f3c010]/15 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-white uppercase tracking-wider">Email Inquiry</h3>
                     <a
                       href={`mailto:${SITE_CONFIG.contact.email}`}
-                      className="text-sm text-blue-400 hover:underline mt-1 block font-semibold"
+                      className="text-sm text-[#f3c010] hover:underline mt-1 block font-semibold"
                     >
                       {SITE_CONFIG.contact.email}
                     </a>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 </Card>
 
                 <Card variant="glass" className="flex items-start gap-4 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f3c010]/15 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010] shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   href={SITE_CONFIG.contact.arboxScheduleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors p-2"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#f3c010] hover:text-[#f3c010] transition-colors p-2"
                 >
                   <span>Open Arbox Member Registration</span>
                   <ExternalLink className="w-3.5 h-3.5" />
