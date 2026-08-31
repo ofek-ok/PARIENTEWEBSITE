@@ -8,6 +8,7 @@ export interface SectionHeaderProps {
   highlightedTitleWord?: string;
   description?: string;
   align?: "right" | "center" | "left";
+  theme?: "dark" | "light";
   className?: string;
   badgeVariant?: "gold" | "amber" | "outline" | "subtle";
 }
@@ -18,6 +19,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   highlightedTitleWord,
   description,
   align = "right",
+  theme = "dark",
   className,
   badgeVariant = "gold",
 }) => {
@@ -26,6 +28,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     center: "text-center items-center mx-auto",
     left: "text-left items-end ml-auto",
   };
+
+  const titleColorClass = theme === "light" ? "text-[#0a0b0e]" : "text-white";
+  const descriptionColorClass = theme === "light" ? "text-[#3a3d46]" : "text-zinc-300";
 
   const renderTitle = () => {
     if (!highlightedTitleWord || !title.includes(highlightedTitleWord)) {
@@ -48,11 +53,11 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
           {badge}
         </Badge>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-display">
+      <h2 className={cn("text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight font-display", titleColorClass)}>
         {renderTitle()}
       </h2>
       {description && (
-        <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
+        <p className={cn("text-base sm:text-lg font-normal leading-relaxed", descriptionColorClass)}>
           {description}
         </p>
       )}
