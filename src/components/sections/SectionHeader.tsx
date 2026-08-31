@@ -8,7 +8,7 @@ export interface SectionHeaderProps {
   highlightedTitleWord?: string;
   description?: string;
   align?: "right" | "center" | "left";
-  theme?: "dark" | "light";
+  theme?: "dark" | "light" | "yellow";
   className?: string;
   badgeVariant?: "gold" | "amber" | "outline" | "subtle";
 }
@@ -29,8 +29,19 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     left: "text-left items-end ml-auto",
   };
 
-  const titleColorClass = theme === "light" ? "text-[#0a0b0e]" : "text-white";
-  const descriptionColorClass = theme === "light" ? "text-[#3a3d46]" : "text-zinc-300";
+  const titleColorClass =
+    theme === "yellow"
+      ? "text-[#060709]"
+      : theme === "light"
+      ? "text-[#0a0b0e]"
+      : "text-white";
+
+  const descriptionColorClass =
+    theme === "yellow"
+      ? "text-[#1a1c23] font-medium"
+      : theme === "light"
+      ? "text-[#3a3d46]"
+      : "text-zinc-300";
 
   const renderTitle = () => {
     if (!highlightedTitleWord || !title.includes(highlightedTitleWord)) {
@@ -40,7 +51,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-[#f3c010] font-black">{highlightedTitleWord}</span>
+        <span className={theme === "yellow" ? "text-white font-black drop-shadow-md" : "text-[#f3c010] font-black"}>
+          {highlightedTitleWord}
+        </span>
         {parts[1]}
       </>
     );
