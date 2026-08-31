@@ -63,17 +63,17 @@ export const SegmentSelector: React.FC<SegmentSelectorProps> = ({
               type="button"
               onClick={() => onSelectSegment(opt.id)}
               className={cn(
-                "flex flex-col items-start p-3 rounded-xl border text-right transition-all duration-200 cursor-pointer min-h-[76px] justify-between",
+                "flex flex-col items-start p-3.5 rounded-xl border text-right transition-all duration-200 cursor-pointer min-h-[80px] justify-between",
                 isSelected
-                  ? "bg-blue-600/15 border-blue-500 text-white shadow-lg shadow-blue-500/10"
-                  : "bg-zinc-900/80 border-zinc-800 text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800/60"
+                  ? "bg-[#f3c010]/10 border-[#f3c010] text-white shadow-lg"
+                  : "bg-[#060709] border-zinc-800 text-zinc-300 hover:border-zinc-700 hover:bg-zinc-900"
               )}
             >
               <div className="flex items-center justify-between w-full">
                 <span
                   className={cn(
                     "transition-colors",
-                    isSelected ? "text-blue-400" : "text-zinc-500"
+                    isSelected ? "text-[#f3c010]" : "text-zinc-500"
                   )}
                 >
                   {SEGMENT_ICONS[opt.id]}
@@ -82,7 +82,7 @@ export const SegmentSelector: React.FC<SegmentSelectorProps> = ({
                   className={cn(
                     "text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded",
                     isSelected
-                      ? "bg-blue-500/20 text-blue-300"
+                      ? "bg-[#f3c010]/20 text-[#f3c010]"
                       : "bg-zinc-800 text-zinc-400"
                   )}
                 >

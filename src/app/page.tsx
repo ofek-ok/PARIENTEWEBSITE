@@ -18,7 +18,6 @@ import {
   Phone,
   Mail,
   Clock,
-  ExternalLink,
   Play,
   ImageIcon,
   HeartHandshake,
@@ -27,22 +26,22 @@ import {
 
 export default function HomePage() {
   return (
-    <div className="space-y-0 text-right">
+    <div className="space-y-0 text-right bg-[#060709]">
       {/* ====================================================================
-          SECTION 1 — HERO
+          SECTION 1 — HERO (תמונת תדמית רשמית, טיפוגרפיה חזקה)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800/80 pt-12 pb-20 lg:py-28">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Text Column */}
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="blue" size="md">
+              <Badge variant="gold" size="md">
                 אקדמיית פריינטה • כפר סבא
               </Badge>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] font-display">
                 יותר ממועדון. <br />
-                <span className="text-blue-500">בית לאמנויות לחימה.</span>
+                <span className="text-[#f3c010]">בית לאמנויות לחימה.</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
@@ -59,18 +58,17 @@ export default function HomePage() {
                 >
                   מצאו את המסלול שלכם
                 </Button>
-                <Button variant="outline" size="xl" href="#lead-form">
+                <Button variant="gold" size="xl" href="#lead-form">
                   קביעת אימון ניסיון
                 </Button>
               </div>
             </div>
 
-            {/* Media Placeholder Column */}
+            {/* Authentic Photography/Video Placeholder Column */}
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] rounded-3xl bg-[#101216] border border-zinc-800 p-1 flex flex-col items-center justify-center overflow-hidden group shadow-2xl">
-                {/* Temporary Media Placeholder Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950/40 flex flex-col items-center justify-center p-6 text-center space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <div className="relative aspect-[4/3] rounded-3xl bg-[#0d0f13] border border-zinc-800 p-1 flex flex-col items-center justify-center overflow-hidden group shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#060709] via-[#0d0f13] to-amber-950/20 flex flex-col items-center justify-center p-6 text-center space-y-3">
+                  <div className="w-16 h-16 rounded-2xl bg-[#f3c010]/15 border border-[#f3c010]/40 flex items-center justify-center text-[#f3c010] group-hover:bg-[#f3c010] group-hover:text-[#060709] transition-colors">
                     <Play className="w-7 h-7 mr-0.5" />
                   </div>
                   <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
@@ -89,7 +87,7 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 2 — FIND YOUR PROGRAM (מה מתאים לכם?)
           ==================================================================== */}
-      <Section id="programs" variant="charcoal" size="lg" className="border-b border-zinc-800/80">
+      <Section id="programs" variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             badge="מסלולי אימון"
@@ -100,12 +98,12 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1 — Kids */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-blue-500/50 transition-all duration-300">
-              <div className="relative aspect-[16/9] bg-zinc-900 flex items-center justify-center p-6 text-center border-b border-zinc-800/80">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010]/60 transition-all duration-300">
+              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
-                  <ImageIcon className="w-8 h-8 text-amber-400/60 mx-auto" />
+                  <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-500 block uppercase">
-                    [תמונה ראשי — אימון ילדים]
+                    [צילום אימון ילדים — אקדמיית פריינטה]
                   </span>
                 </div>
               </div>
@@ -120,7 +118,7 @@ export default function HomePage() {
                 </p>
                 <div className="pt-2">
                   <Button
-                    variant="outline"
+                    variant="gold"
                     size="md"
                     href="/kids"
                     fullWidth
@@ -133,18 +131,18 @@ export default function HomePage() {
             </Card>
 
             {/* Card 2 — Teens */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-blue-500/50 transition-all duration-300">
-              <div className="relative aspect-[16/9] bg-zinc-900 flex items-center justify-center p-6 text-center border-b border-zinc-800/80">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010]/60 transition-all duration-300">
+              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
-                  <ImageIcon className="w-8 h-8 text-blue-400/60 mx-auto" />
+                  <ImageIcon className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-500 block uppercase">
-                    [תמונה ראשי — אימון נוער]
+                    [צילום אימון נוער — אקדמיית פריינטה]
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="blue">גילאי 13–17</Badge>
+                  <Badge variant="gold">גילאי 13–17</Badge>
                   <span className="text-xs font-bold text-zinc-500">ספורט והגנה עצמית</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">נוער</h3>
@@ -153,7 +151,7 @@ export default function HomePage() {
                 </p>
                 <div className="pt-2">
                   <Button
-                    variant="outline"
+                    variant="gold"
                     size="md"
                     href="/teens"
                     fullWidth
@@ -166,18 +164,18 @@ export default function HomePage() {
             </Card>
 
             {/* Card 3 — Competitive Youth */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-blue-500/50 transition-all duration-300">
-              <div className="relative aspect-[16/9] bg-zinc-900 flex items-center justify-center p-6 text-center border-b border-zinc-800/80">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010]/60 transition-all duration-300">
+              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
-                  <Trophy className="w-8 h-8 text-amber-400/60 mx-auto" />
+                  <Trophy className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-500 block uppercase">
-                    [תמונה ראשי — נוער תחרותי]
+                    [צילום נוער תחרותי — אקדמיית פריינטה]
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="gold">מסלול תחרותי</Badge>
+                  <Badge variant="amber">מסלול תחרותי</Badge>
                   <span className="text-xs font-bold text-zinc-500">גילאי 13–21</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">נוער תחרותי</h3>
@@ -186,7 +184,7 @@ export default function HomePage() {
                 </p>
                 <div className="pt-2">
                   <Button
-                    variant="outline"
+                    variant="gold"
                     size="md"
                     href="/competition"
                     fullWidth
@@ -199,18 +197,18 @@ export default function HomePage() {
             </Card>
 
             {/* Card 4 — Adults */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-blue-500/50 transition-all duration-300">
-              <div className="relative aspect-[16/9] bg-zinc-900 flex items-center justify-center p-6 text-center border-b border-zinc-800/80">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010]/60 transition-all duration-300">
+              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
                 <div className="space-y-2">
-                  <Users className="w-8 h-8 text-blue-400/60 mx-auto" />
+                  <Users className="w-8 h-8 text-[#f3c010]/60 mx-auto" />
                   <span className="text-xs font-bold text-zinc-500 block uppercase">
-                    [תמונה ראשי — אימון בוגרים]
+                    [צילום אימון בוגרים — אקדמיית פריינטה]
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="blue">גילאי 22–45+</Badge>
+                  <Badge variant="gold">גילאי 22–45+</Badge>
                   <span className="text-xs font-bold text-zinc-500">BJJ, MMA, Muay Thai</span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-white">בוגרים</h3>
@@ -219,7 +217,7 @@ export default function HomePage() {
                 </p>
                 <div className="pt-2">
                   <Button
-                    variant="outline"
+                    variant="gold"
                     size="md"
                     href="/adults"
                     fullWidth
@@ -237,11 +235,11 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 3 — WHAT IS PARIENTE ACADEMY? (אודות)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800/80">
+      <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="blue">הדרך שלנו</Badge>
+              <Badge variant="gold">הדרך שלנו</Badge>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
                 אנחנו מאמינים שאמנויות לחימה בונות הרבה מעבר ללוחמים.
               </h2>
@@ -265,11 +263,11 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl bg-[#101216] border border-zinc-800 flex items-center justify-center p-6 text-center">
+              <div className="relative aspect-[4/5] rounded-3xl bg-[#0d0f13] border border-zinc-800 flex items-center justify-center p-6 text-center shadow-xl">
                 <div className="space-y-2">
-                  <Shield className="w-12 h-12 text-blue-400 mx-auto" />
+                  <Shield className="w-12 h-12 text-[#f3c010] mx-auto" />
                   <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [תמונה רשמית — ראש האקדמיה עידו פריינטה והמזרן]
+                    [צילום רשמי — ראש האקדמיה עידו פריינטה]
                   </span>
                 </div>
               </div>
@@ -281,7 +279,7 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 4 — SOCIAL PROOF / NUMBERS (מספרים ומהות)
           ==================================================================== */}
-      <Section variant="charcoal" size="md" className="border-b border-zinc-800/80">
+      <Section variant="charcoal" size="md" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             badge="נתונים ומהות"
@@ -291,31 +289,27 @@ export default function HomePage() {
           />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* PLACEHOLDER STAT 1 */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
               <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-blue-500 font-display">XX+</div>
+              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX+</div>
               <div className="text-sm font-bold text-white">שנות פעילות</div>
             </Card>
 
-            {/* PLACEHOLDER STAT 2 */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
               <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-blue-500 font-display">XXX+</div>
+              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XXX+</div>
               <div className="text-sm font-bold text-white">מתאמנים</div>
             </Card>
 
-            {/* PLACEHOLDER STAT 3 */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
               <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-blue-500 font-display">XX</div>
+              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX</div>
               <div className="text-sm font-bold text-white">אלופי ישראל</div>
             </Card>
 
-            {/* PLACEHOLDER STAT 4 */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 text-center p-6 sm:p-8 space-y-2">
               <span className="text-xs font-bold text-zinc-500 uppercase block">// PLACEHOLDER</span>
-              <div className="text-4xl sm:text-5xl font-black text-blue-500 font-display">XX</div>
+              <div className="text-4xl sm:text-5xl font-black text-[#f3c010] font-display">XX</div>
               <div className="text-sm font-bold text-white">ייצוג באליפויות בינלאומיות</div>
             </Card>
           </div>
@@ -325,11 +319,11 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 5 — COMPETITION / EXCELLENCE (מצוינות ותחרויות)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800/80">
+      <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <Badge variant="gold">מצוינות בספורט תחרותי</Badge>
+              <Badge variant="amber">מצוינות בספורט תחרותי</Badge>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
                 למי שרוצה להגיע רחוק יותר.
               </h2>
@@ -349,10 +343,10 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[16/10] rounded-3xl bg-[#101216] border border-zinc-800 flex flex-col items-center justify-center p-6 text-center">
-                <Trophy className="w-12 h-12 text-amber-400/80 mb-2" />
+              <div className="relative aspect-[16/10] rounded-3xl bg-[#0d0f13] border border-zinc-800 flex flex-col items-center justify-center p-6 text-center">
+                <Trophy className="w-12 h-12 text-[#f3c010]/80 mb-2" />
                 <span className="text-xs font-bold text-zinc-400 block uppercase">
-                  [מדיה דרמטית — אליפויות ותחרויות MMA / BJJ]
+                  [צילום אליפויות ותחרויות — אקדמיית פריינטה]
                 </span>
               </div>
             </div>
@@ -363,7 +357,7 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 6 — COMMUNITY (קהילה ויוזמות)
           ==================================================================== */}
-      <Section variant="charcoal" size="lg" className="border-b border-zinc-800/80">
+      <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             badge="קהילה וחיבור"
@@ -374,8 +368,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Initiative 1 — Sensei Aba */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-8 space-y-5 hover:border-blue-500/40 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-8 space-y-5 hover:border-[#f3c010]/40 transition-colors">
+              <div className="w-12 h-12 rounded-2xl bg-[#f3c010]/10 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010]">
                 <Heart className="w-6 h-6" />
               </div>
               <div className="space-y-2">
@@ -387,7 +381,7 @@ export default function HomePage() {
               </div>
               <div className="pt-2">
                 <Button
-                  variant="outline"
+                  variant="gold"
                   size="md"
                   href="/sensei-aba"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
@@ -398,8 +392,8 @@ export default function HomePage() {
             </Card>
 
             {/* Initiative 2 — Achim LaChaim */}
-            <Card variant="solid" className="bg-[#101216] border-zinc-800 p-8 space-y-5 hover:border-blue-500/40 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-8 space-y-5 hover:border-[#f3c010]/40 transition-colors">
+              <div className="w-12 h-12 rounded-2xl bg-[#f3c010]/10 border border-[#f3c010]/30 flex items-center justify-center text-[#f3c010]">
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-2">
@@ -411,7 +405,7 @@ export default function HomePage() {
               </div>
               <div className="pt-2">
                 <Button
-                  variant="outline"
+                  variant="gold"
                   size="md"
                   href="/achim-lachaim"
                   leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
@@ -427,7 +421,7 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 7 — ACADEMY EXPERIENCE / GALLERY (חוויה וגלריה)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800/80">
+      <Section variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             badge="חוויית האקדמיה"
@@ -447,7 +441,7 @@ export default function HomePage() {
             ].map((label, idx) => (
               <div
                 key={idx}
-                className="aspect-video rounded-2xl bg-[#101216] border border-zinc-800 flex flex-col items-center justify-center p-4 text-center hover:border-zinc-700 transition-colors"
+                className="aspect-video rounded-2xl bg-[#0d0f13] border border-zinc-800 flex flex-col items-center justify-center p-4 text-center hover:border-zinc-700 transition-colors"
               >
                 <ImageIcon className="w-6 h-6 text-zinc-500 mb-2" />
                 <span className="text-xs font-bold text-zinc-400">[{label}]</span>
@@ -471,7 +465,7 @@ export default function HomePage() {
       {/* ====================================================================
           SECTION 8 — GENERAL LEAD CONVERSION (טופס הרשמה/ייעוץ)
           ==================================================================== */}
-      <Section id="lead-form" variant="charcoal" size="lg" className="border-b border-zinc-800/80">
+      <Section id="lead-form" variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="narrow">
           <SectionHeader
             badge="ייעוץ והתאמה"
@@ -491,7 +485,7 @@ export default function HomePage() {
         <Container size="default">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-right">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-blue-400 font-bold text-sm">
+              <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <MapPin className="w-4 h-4" />
                 <span>כתובת</span>
               </div>
@@ -499,7 +493,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-blue-400 font-bold text-sm">
+              <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <Phone className="w-4 h-4" />
                 <span>טלפון</span>
               </div>
@@ -509,7 +503,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-blue-400 font-bold text-sm">
+              <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <Mail className="w-4 h-4" />
                 <span>אימייל</span>
               </div>
@@ -519,7 +513,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-blue-400 font-bold text-sm">
+              <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
                 <Clock className="w-4 h-4" />
                 <span>שעות פעילות</span>
               </div>

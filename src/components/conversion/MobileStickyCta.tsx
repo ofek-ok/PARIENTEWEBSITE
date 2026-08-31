@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { SegmentId, SEGMENT_CONFIGS } from "@/lib/conversion";
 
 export interface MobileStickyCtaProps {
@@ -37,7 +37,6 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({
   };
 
   useEffect(() => {
-    // Hide mobile CTA when near the actual form section to avoid UI clutter
     const handleScroll = () => {
       const formEl = document.querySelector(anchor);
       if (formEl) {
@@ -57,15 +56,15 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({
   if (!isVisible) return null;
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800/80 shadow-2xl animate-in slide-in-from-bottom duration-200">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-[#060709]/95 border-t border-zinc-800 shadow-2xl animate-in slide-in-from-bottom duration-200">
       <div className="max-w-md mx-auto flex items-center gap-3">
         <Button
-          variant="glow"
+          variant="primary"
           size="lg"
           href={targetHref}
           onClick={handleClick}
           fullWidth
-          rightIcon={<ArrowRight className="w-4 h-4" />}
+          leftIcon={<ArrowLeft className="w-4 h-4 ml-1" />}
           className="text-sm py-3.5"
         >
           {label}

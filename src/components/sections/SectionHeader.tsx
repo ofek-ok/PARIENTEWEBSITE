@@ -9,7 +9,7 @@ export interface SectionHeaderProps {
   description?: string;
   align?: "right" | "center" | "left";
   className?: string;
-  badgeVariant?: "blue" | "gold" | "outline" | "subtle";
+  badgeVariant?: "gold" | "amber" | "outline" | "subtle";
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
@@ -19,7 +19,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   description,
   align = "right",
   className,
-  badgeVariant = "blue",
+  badgeVariant = "gold",
 }) => {
   const alignmentClasses = {
     right: "text-right items-start",
@@ -35,7 +35,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-blue-500 font-black">{highlightedTitleWord}</span>
+        <span className="text-[#f3c010] font-black">{highlightedTitleWord}</span>
         {parts[1]}
       </>
     );
