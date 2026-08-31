@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: "Pariente Academy",
-  hebrewName: "אקדמיית פריינטה",
+  hebrewName: "פריינטה אקדמי",
   tagline: "בית הספר הגבוה לאמנויות לחימה",
   founder: "עידו פריינטה",
   founderTitle: "ראש האקדמיה וחגורה שחורה דאן 2 בג'יו ג'יטסו ברזילאי ('פטיש העברי')",
@@ -35,7 +35,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: "ילדים (גילאי 4–12)", href: "/kids", description: "ביטחון עצמי, משמעת וכבוד" },
   { label: "נוער (גילאי 13–17)", href: "/teens", description: "כושר, ביטחון אישי וקבוצה" },
   { label: "נוער תחרותי", href: "/competition", badge: "מסלול תחרותי", description: "אימונים מקצועיים לאליפויות" },
-  { label: "בוגרים (MMA, BJJ)", href: "/adults", description: "אימונים, כושר וקהילה" },
+  { label: "בוגרים", href: "/adults", description: "אימונים, כושר וקהילה" },
   { label: "סנסאי אבא", href: "/sensei-aba", description: "חיבור אבא וילד על המזרן" },
   { label: "אחים לחיים", href: "/achim-lachaim", description: "פרויקט שיקום וקהילה ללוחמים" },
   { label: "מערכת שעות", href: "/schedule" },

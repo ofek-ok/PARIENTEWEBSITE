@@ -17,6 +17,7 @@ export interface LeadFormProps {
   overrideSubtitle?: string;
   overrideCtaText?: string;
   showEmail?: boolean;
+  hideFormHeader?: boolean;
   className?: string;
 }
 
@@ -27,6 +28,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
   overrideSubtitle,
   overrideCtaText,
   showEmail = false,
+  hideFormHeader = false,
   className,
 }) => {
   const utmParams = useUtmParams();
@@ -114,18 +116,20 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       id={config.formAnchorId}
       className={`p-6 sm:p-10 space-y-6 border-zinc-800 bg-[#0d0f13] ${className || ""}`}
     >
-      <div className="space-y-2 text-right">
-        <Badge variant="gold" className="gap-1">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          {config.badge}
-        </Badge>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-          {overrideTitle || config.formTitle}
-        </h3>
-        <p className="text-sm text-zinc-400 leading-relaxed">
-          {overrideSubtitle || config.formSubtitle}
-        </p>
-      </div>
+      {!hideFormHeader && (
+        <div className="space-y-2 text-right">
+          <Badge variant="gold" className="gap-1">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            {config.badge}
+          </Badge>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+            {overrideTitle || config.formTitle}
+          </h3>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            {overrideSubtitle || config.formSubtitle}
+          </p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-5 text-right">
         {/* Visual Segment Selector */}

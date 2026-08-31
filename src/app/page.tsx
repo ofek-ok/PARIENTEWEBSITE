@@ -123,7 +123,7 @@ export default function HomePage() {
             <SectionHeader
               badge="מסלולי אימון"
               title="איפה מתחילים?"
-              description="לכל אחד יש סיבה אחרת להגיע לאימון. בחרו את המסלול שמתאים לכם והכירו את האימונים, הצוות והאפשרויות שיש בפריינטה."
+              description="לכל אחד יש סיבה אחרת להגיע לאימון. בחרו את המסלול שמתאים לכם והכירו את האימונים, הצוות והאפשרויות שיש בפריינטה אקדמי אקדמי."
               align="right"
               className="mb-0"
             />
@@ -302,7 +302,7 @@ export default function HomePage() {
                   אנחנו רואים את זה אצל ילד שעולה בפעם הראשונה על המזרן, אצל נער שמוצא מקום שהוא מרגיש בו שייך ואצל מתאמן בוגר שמגיע לאימון גם אחרי יום ארוך.
                 </p>
                 <p className="font-bold text-white">
-                  זו הדרך שבה אנחנו מלמדים אמנויות לחימה בפריינטה.
+                  זו הדרך שבה אנחנו מלמדים אמנויות לחימה בפריינטה אקדמי.
                 </p>
               </div>
 
@@ -407,20 +407,20 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 6 — COMMUNITY / THE PEOPLE OF PARIENTE (האנשים של פריינטה)
+          SECTION 6 — COMMUNITY / THE PEOPLE OF PARIENTE (האנשים של פריינטה אקדמי אקדמי)
           ==================================================================== */}
       <Section variant="charcoal" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="gold">האנשים של פריינטה</Badge>
+            <Badge variant="gold">הקהילה</Badge>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight font-display">
-              האנשים של פריינטה
+              האנשים של פריינטה אקדמי אקדמי
             </h2>
 
             <div className="space-y-4 text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
               <p>
-                אפשר להגיע לפריינטה בשביל ללמוד להילחם, להיכנס לכושר או להתחרות. אבל כשמתאמנים יחד לאורך זמן, נוצר גם משהו שקשה להסביר למי שעוד לא עלה על המזרן.
+                אפשר להגיע לפריינטה אקדמי בשביל ללמוד להילחם, להיכנס לכושר או להתחרות. אבל כשמתאמנים יחד לאורך זמן, נוצר גם משהו שקשה להסביר למי שעוד לא עלה על המזרן.
               </p>
               <p>
                 מתאמנים מתחילים לצד אנשים שנמצאים כאן כבר שנים. מתאמנים יחד, עוזרים אחד לשני ומשתפרים יחד.
@@ -447,7 +447,7 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          SECTION 7 — MORE AT PARIENTE (עוד בפריינטה - פרויקטים ויוזמות)
+          SECTION 7 — MORE AT PARIENTE (עוד בפריינטה אקדמי אקדמי - פרויקטים ויוזמות)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Background scratch texture */}
@@ -459,8 +459,8 @@ export default function HomePage() {
         <Container size="default" className="relative z-10">
           <SectionHeader
             badge="יוזמות ופרויקטים"
-            title="עוד בפריינטה"
-            description="האקדמיה לא נגמרת במערכת האימונים השבועית. לאורך השנה מתקיימים בפריינטה פרויקטים, מפגשים ופעילויות שמחברים את אמנויות הלחימה לעוד חלקים בחיים."
+            title="עוד בפריינטה אקדמי אקדמי"
+            description="האקדמיה לא נגמרת במערכת האימונים השבועית. לאורך השנה מתקיימים בפריינטה אקדמי פרויקטים, מפגשים ופעילויות שמחברים את אמנויות הלחימה לעוד חלקים בחיים."
             align="right"
           />
 
@@ -572,7 +572,7 @@ export default function HomePage() {
             align="center"
           />
 
-          <GeneralLeadForm showSegmentSelector overrideCtaText="אני רוצה לשמוע עוד" />
+          <GeneralLeadForm showSegmentSelector hideFormHeader overrideCtaText="אני רוצה לשמוע עוד" />
         </Container>
       </Section>
 

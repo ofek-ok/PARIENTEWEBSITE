@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-sm text-zinc-300 leading-relaxed max-w-sm">
-              נוסדה בשנת 2015 על ידי עידו פריינטה (&quot;פטיש העברי&quot;). מוסד עילית לאמנויות לחימה, אימוני BJJ, MMA, אגרוף תאילנדי, פיתוח נוער ויוזמות קהילתיות.
+              נוסדה בשנת 2015 על ידי עידו פריינטה (&quot;פטיש העברי&quot;). אימוני BJJ, MMA, אגרוף תאילנדי, פיתוח נוער ויוזמות קהילתיות.
             </p>
 
             {/* Official Pariente Stars SVG */}
@@ -159,7 +159,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-          <p>© {new Date().getFullYear()} אקדמיית פריינטה. כל הזכויות שמורות.</p>
+          <p>© {new Date().getFullYear()} {SITE_CONFIG.hebrewName}. כל הזכויות שמורות.</p>
           <div className="flex items-center space-x-6 space-x-reverse">
             <span>כפר סבא, ישראל</span>
           </div>
