@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import React, { useState } from "react";
 import { Section } from "@/components/sections/Section";
@@ -381,45 +382,48 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          CHAPTER 5 — COMMUNITY / THE PEOPLE OF PARIENTE (PARIENTE YELLOW SURFACE)
+          CHAPTER 5 — COMMUNITY / THE PEOPLE OF PARIENTE (EDITORIAL SPREAD)
           ==================================================================== */}
-      <Section variant="yellow" size="lg" className="border-b border-[#d4a300] relative overflow-hidden">
+      <Section id="people" variant="yellowDark" size="lg" className="border-b border-[#d4a300] relative overflow-hidden">
         {/* Subtle scratch texture */}
         <div
           className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover mix-blend-overlay"
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
         />
-
         <Container size="default" className="relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#060709] leading-tight font-display">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-5xl font-black text-[#040406] leading-tight font-display mb-6">
               האנשים של פריינטה אקדמי
             </h2>
+            <p className="text-lg sm:text-xl text-[#040406]/80 font-medium leading-relaxed">
+              בסוף מתאמנים עם אנשים. ילדים, בני נוער, מתחרים ובוגרים שחולקים את אותו מזרן, כל אחד עם הסיבה שלו להגיע וכל אחד בקצב שלו.
+            </p>
+          </div>
 
-            <div className="space-y-4 text-base sm:text-lg text-[#1a1c23] font-medium leading-relaxed">
-              <p>
-                אפשר להגיע לפריינטה אקדמי בשביל ללמוד להילחם, להיכנס לכושר או להתחרות. אבל כשמתאמנים יחד לאורך זמן, נוצר גם משהו שקשה להסביר למי שעוד לא עלה על המזרן.
-              </p>
-              <p>
-                מתאמנים מתחילים לצד אנשים שנמצאים כאן כבר שנים. מתאמנים יחד, עוזרים אחד לשני ומשתפרים יחד.
-              </p>
-              <p className="font-bold text-[#060709]">
-                בסוף, האנשים שאתה פוגש בכל שבוע הם חלק גדול מהסיבה שאתה רוצה להגיע שוב לאימון.
-              </p>
+          {/* Editorial Photography Composition */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-10">
+            {/* 1. Dominant Large Photograph */}
+            <div className="col-span-2 md:col-span-2 row-span-2 relative aspect-square md:aspect-auto bg-[#0d0f13] overflow-hidden">
+              <img src="/images/gallery_1.jpg" alt="אימון באקדמיה" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            {/* 2. Medium Photograph */}
+            <div className="col-span-2 md:col-span-2 relative aspect-[21/9] md:aspect-[4/3] bg-[#0d0f13] overflow-hidden">
+              <img src="/images/training_mg_5664.jpg" alt="אימון בוגרים" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            {/* 3. Small Supporting */}
+            <div className="col-span-1 md:col-span-1 relative aspect-square bg-[#0d0f13] overflow-hidden">
+              <img src="/images/gallery_3.jpg" alt="ילדים באקדמיה" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            {/* 4. Small Supporting */}
+            <div className="col-span-1 md:col-span-1 relative aspect-square bg-[#0d0f13] overflow-hidden">
+              <img src="/images/gallery_4.jpg" alt="אווירה על המזרן" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
             </div>
           </div>
 
-          {/* Real People Photography Composition */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
-            <div className="aspect-[4/3] rounded-2xl bg-[#0d0f13] border border-zinc-800 flex items-center justify-center p-4 text-center shadow-xl">
-              <span className="text-xs font-bold text-zinc-300 uppercase">[צילום קהילה ומזרן]</span>
-            </div>
-            <div className="aspect-[4/3] rounded-2xl bg-[#0d0f13] border border-zinc-800 flex items-center justify-center p-4 text-center shadow-xl">
-              <span className="text-xs font-bold text-zinc-300 uppercase">[צילום מתאמנים וצוות]</span>
-            </div>
-            <div className="aspect-[4/3] rounded-2xl bg-[#0d0f13] border border-zinc-800 flex items-center justify-center p-4 text-center shadow-xl">
-              <span className="text-xs font-bold text-zinc-300 uppercase">[צילום אווירה באקדמיה]</span>
-            </div>
+          <div className="flex justify-end">
+            <Link href="/gallery" className="inline-flex items-center text-[#040406] font-bold text-lg hover:opacity-70 transition-opacity">
+              לכל התמונות
+            </Link>
           </div>
         </Container>
       </Section>
@@ -427,38 +431,15 @@ export default function HomePage() {
       {/* ====================================================================
           CHAPTER 5.5 — SCHEDULE (ARBOX EMBED)
           ==================================================================== */}
-      <Section id="schedule" variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
-        {/* Authentic Fighter Artwork Background */}
-        <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
-          <picture>
-            <source media="(max-width: 768px)" srcSet="/images/good_app.png" />
-            <img 
-              src="/images/good_deck.png" 
-              alt="" 
-              className="w-full h-full object-cover object-[center_30%] opacity-20 mix-blend-screen scale-110"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#040406] via-[#040406]/60 to-[#040406]" />
-        </div>
-
-        {/* Subtle red claw marks for brand continuity */}
-        <div className="absolute top-1/4 -right-16 opacity-30 pointer-events-none rotate-12 z-0 hidden lg:block" aria-hidden="true">
-          {/* eslint-disable-next-html-element-for-img */}
-          <img
-            src="/images/claw_scratches.svg"
-            alt=""
-            className="w-96 h-auto object-contain"
-          />
-        </div>
-
-        <Container size="default" className="relative z-10">
+      <Section id="schedule" variant="dark" size="lg" className="border-b border-zinc-800">
+        <Container size="default">
           <SectionHeader
             title="מערכת השעות"
             description="כל האימונים במקום אחד. בחרו את הקבוצה או האימון שמעניינים אתכם ובדקו מתי נפגשים על המזרן."
             align="right"
           />
 
-          <div className="relative mt-8 w-full rounded-2xl bg-[#060709] overflow-hidden shadow-2xl border border-zinc-800 flex flex-col items-center justify-center min-h-[600px]">
+          <div className="relative mt-8 w-full rounded-none sm:rounded-2xl bg-[#060709] overflow-hidden sm:shadow-2xl sm:border border-zinc-800 flex flex-col items-center justify-center min-h-[600px]">
             {/* Fallback visible behind the iframe if it fails to load or render properly */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
                <p className="text-zinc-400 font-medium mb-4">לא הצלחנו לטעון כרגע את מערכת השעות.</p>
@@ -478,120 +459,89 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
-          CHAPTER 6 — MORE AT PARIENTE (EDITORIAL BLACK WITH YELLOW HIGHLIGHT CARDS)
+          CHAPTER 6 — MORE AT PARIENTE (EDITORIAL MOSAIC)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
         {/* Background scratch texture */}
         <div
-          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover"
+          className="absolute inset-0 opacity-[0.05] pointer-events-none bg-center bg-cover"
           style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
         />
 
         <Container size="default" className="relative z-10">
-          <SectionHeader
-            title="עוד בפריינטה אקדמי"
-            description="האקדמיה לא נגמרת במערכת האימונים השבועית. לאורך השנה מתקיימים בפריינטה אקדמי פרויקטים, מפגשים ופעילויות שמחברים את אמנויות הלחימה לעוד חלקים בחיים."
-            align="right"
-          />
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight font-display mb-6">
+              עוד בפריינטה אקדמי
+            </h2>
+            <p className="text-lg sm:text-xl text-zinc-400 font-medium leading-relaxed">
+              האימונים השבועיים הם רק חלק ממה שקורה כאן. לאורך השנה מתקיימים באקדמיה סמינרים, מחנות אימונים, קייטנות ופעילויות שמחברות בין המתאמנים גם בדרכים אחרות.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Initiative 1 — Sensei Aba */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-8 space-y-5 hover:border-[#f3c010] transition-colors shadow-2xl">
-              <div className="w-12 h-12 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010]">
-                <Heart className="w-6 h-6 fill-current" />
+          {/* Asymmetric Editorial Mosaic */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-[auto]">
+            
+            {/* A. סנסיי אבא (Large Visual Story) */}
+            <Link href="/sensei-aba" className="group block md:col-span-7 relative bg-[#0a0c10] overflow-hidden min-h-[300px] md:min-h-[400px]">
+              <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
+                <img src="/images/sensei_aba.jpg" alt="סנסיי אבא" className="w-full h-full object-cover grayscale mix-blend-luminosity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/80 to-transparent" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-2xl font-extrabold text-white">סנסאי אבא</h3>
-                <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  אבא וילד עולים יחד על המזרן לאימון משותף. שניהם לומדים, מתאמנים ועוברים את החוויה יחד.
+              <div className="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end">
+                <h3 className="text-3xl sm:text-4xl font-black text-white mb-3 group-hover:text-[#f3c010] transition-colors">סנסיי אבא</h3>
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-md">
+                  אימון משותף לאבות וילדים על המזרן. זמן איכות דרך ג'ו ג'יטסו, תנועה ולמידה משותפת.
                 </p>
               </div>
-              <div className="pt-2">
-                <Button
-                  variant="gold"
-                  size="md"
-                  href="/sensei-aba"
-                >
-                  הכירו את סנסאי אבא
-                </Button>
-              </div>
-            </Card>
+            </Link>
 
-            {/* Initiative 2 — Achim LaChaim */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-8 space-y-5 hover:border-[#f3c010] transition-colors shadow-2xl">
-              <div className="w-12 h-12 rounded-2xl bg-[#f3c010]/20 border border-[#f3c010]/50 flex items-center justify-center text-[#f3c010]">
-                <HeartHandshake className="w-6 h-6" />
+            {/* B. אחים לחיים (Smaller Supporting Story) */}
+            <Link href="/achim-lachaim" className="group block md:col-span-5 relative bg-[#0a0c10] overflow-hidden min-h-[300px] md:min-h-[400px]">
+              <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700">
+                <img src="/images/gallery_5.jpg" alt="אחים לחיים" className="w-full h-full object-cover grayscale mix-blend-luminosity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/80 to-transparent" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-2xl font-extrabold text-white">אחים לחיים</h3>
-                <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  פעילות משותפת שמחברת בין אמנויות לחימה, אימון ומפגש עם חברי עמותת אחים לחיים.
+              <div className="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end">
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 group-hover:text-[#f3c010] transition-colors">אחים לחיים</h3>
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-sm">
+                  פעילות משותפת וחיבור קהילתי עם עמותת אחים לחיים. התמודדות דרך אימון ואמנויות לחימה.
                 </p>
               </div>
-              <div className="pt-2">
-                <Button
-                  variant="gold"
-                  size="md"
-                  href="/achim-lachaim"
-                >
-                  לסיפור של אחים לחיים
-                </Button>
+            </Link>
+
+            {/* C. סמינרים ומחנות אימונים (Large Visual Story - spanning full width or 7/5 again) */}
+            <Link href="/events" className="group block md:col-span-5 relative bg-[#0a0c10] overflow-hidden min-h-[300px] md:min-h-[400px]">
+              <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
+                <img src="/images/training_mg_5664.jpg" alt="סמינרים" className="w-full h-full object-cover grayscale mix-blend-luminosity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/80 to-transparent" />
               </div>
-            </Card>
+              <div className="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end">
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 group-hover:text-[#f3c010] transition-colors">סמינרים ומחנות אימונים</h3>
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-sm">
+                  במהלך השנה מתקיימים בפריינטה אקדמי סמינרים ב-BJJ וב-MMA, לצד מחנות אימונים ופעילויות מיוחדות שמאפשרות להעמיק, להתאמן אחרת ולפגוש עוד אנשים מהתחום.
+                </p>
+              </div>
+            </Link>
+
+            {/* D. קייטנות בחופשות (Smaller Supporting Story) */}
+            <Link href="/events" className="group block md:col-span-7 relative bg-[#0a0c10] overflow-hidden min-h-[300px] md:min-h-[400px]">
+              <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700">
+                <img src="/images/gallery_3.jpg" alt="קייטנות בחופשות" className="w-full h-full object-cover grayscale mix-blend-luminosity object-top" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/80 to-transparent" />
+              </div>
+              <div className="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end">
+                <h3 className="text-3xl sm:text-4xl font-black text-white mb-3 group-hover:text-[#f3c010] transition-colors">קייטנות בחופשות</h3>
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-md">
+                  קייטנות ופעילויות לילדים ולבני נוער במהלך חופשות בית הספר, עם אימוני אמנויות לחימה ופעילויות נוספות במסגרת של פריינטה אקדמי.
+                </p>
+              </div>
+            </Link>
+
           </div>
         </Container>
       </Section>
-
-      {/* ====================================================================
-          CHAPTER 7 — GALLERY (DARK & MEDIA-FIRST)
-          ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[#040406]">
-          {/* eslint-disable-next-html-element-for-img */}
-          <img src="/images/training_mg_5664.jpg" alt="" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-transparent to-[#040406]" />
-        </div>
-        <Container size="default" className="relative z-10">
-          <SectionHeader
-            title="ככה זה נראה אצלנו"
-            description="אימונים, תחרויות, ילדים, בוגרים והרבה שעות על המזרן."
-            align="right"
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              "צילומי אימון בוגרים",
-              "אימון ילדים ומשפחות",
-              "תחרויות ואליפויות",
-              "צוות המאמנים",
-              "קהילה ואירועים",
-              "מתחם האימונים כפר סבא",
-            ].map((label, idx) => (
-              <div
-                key={idx}
-                className="aspect-video rounded-2xl bg-[#060709] border border-zinc-800 flex flex-col items-center justify-center p-4 text-center hover:border-zinc-700 transition-colors"
-              >
-                <ImageIcon className="w-6 h-6 text-zinc-500 mb-2" />
-                <span className="text-xs font-bold text-zinc-400">[{label}]</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-10 text-center">
-            <Button
-              variant="outline"
-              size="lg"
-              href="/gallery"
-            >
-              לגלריה
-            </Button>
-          </div>
-        </Container>
-      </Section>
-
-      {/* ====================================================================
           CHAPTER 8 — GENERAL LEAD CONVERSION (PARIENTE YELLOW BRANDED CONVERSION SURFACE)
-          ==================================================================== */}
+      {/* ====================================================================          ==================================================================== */}
       <Section id="lead-form" variant="yellowDark" size="lg" className="border-b border-[#d4a300] relative overflow-hidden">
         {/* Authentic Yellow Texture Background */}
         <div
