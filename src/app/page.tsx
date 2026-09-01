@@ -134,28 +134,23 @@ export default function HomePage() {
           CHAPTER 2 — PROGRAM SELECTOR (PARIENTE YELLOW BRANDED SURFACE)
           ==================================================================== */}
       <Section id="programs" variant="yellowDark" size="lg" className="relative border-b border-[#d4a300] overflow-hidden">
-        {/* Authentic Fighter/Card Artwork Background from parientemma.com */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <picture>
-            <source media="(max-width: 768px)" srcSet="/images/good_app.png" />
-            <img 
-              src="/images/good_deck.png" 
-              alt="Pariente Fighters" 
-              className="w-full h-full object-cover object-center opacity-30 mix-blend-multiply"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#d4a300]/60 via-transparent to-[#d4a300]/90" />
-        </div>
+        {/* Subtle scratch texture on yellow */}
+        <div
+          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover mix-blend-overlay"
+          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
+        />
 
-        {/* Subtle red claw marks for brand continuity */}
-        <div className="absolute top-1/2 -left-16 opacity-30 pointer-events-none -rotate-12 z-0">
+        {/* Red Lion Scratch Brand Signature */}
+        <div className="absolute -top-12 -left-12 opacity-25 pointer-events-none -rotate-45">
           {/* eslint-disable-next-html-element-for-img */}
           <img
-            src="/images/claw_scratches.svg"
+            src="/images/red_lion_scratches.svg"
             alt=""
             className="w-80 h-auto object-contain"
           />
         </div>
+
+
 
         <Container size="default" className="relative z-10">
           <div className="flex items-center justify-between mb-8">
@@ -432,8 +427,31 @@ export default function HomePage() {
       {/* ====================================================================
           CHAPTER 5.5 — SCHEDULE (ARBOX EMBED)
           ==================================================================== */}
-      <Section id="schedule" variant="dark" size="lg" className="border-b border-zinc-800">
-        <Container size="default">
+      <Section id="schedule" variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
+        {/* Authentic Fighter Artwork Background */}
+        <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+          <picture>
+            <source media="(max-width: 768px)" srcSet="/images/good_app.png" />
+            <img 
+              src="/images/good_deck.png" 
+              alt="" 
+              className="w-full h-full object-cover object-[center_30%] opacity-20 mix-blend-screen scale-110"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#040406] via-[#040406]/60 to-[#040406]" />
+        </div>
+
+        {/* Subtle red claw marks for brand continuity */}
+        <div className="absolute top-1/4 -right-16 opacity-30 pointer-events-none rotate-12 z-0 hidden lg:block" aria-hidden="true">
+          {/* eslint-disable-next-html-element-for-img */}
+          <img
+            src="/images/claw_scratches.svg"
+            alt=""
+            className="w-96 h-auto object-contain"
+          />
+        </div>
+
+        <Container size="default" className="relative z-10">
           <SectionHeader
             title="מערכת השעות"
             description="כל האימונים במקום אחד. בחרו את הקבוצה או האימון שמעניינים אתכם ובדקו מתי נפגשים על המזרן."
