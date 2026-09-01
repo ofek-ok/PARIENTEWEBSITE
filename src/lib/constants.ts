@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
     phone: "054-7468505",
     formattedPhone: "054-7468505",
     email: "parienteacademy@gmail.com",
-    arboxScheduleUrl: "https://site.arboxapp.com/schedule?identifier=YvzhycjH1589289054&whitelabel=Arbox&referer=PLUGIN&lang=he",
+    arboxScheduleUrl: "https://YvzhycjH1589289054.web.arboxapp.com/group?whitelabel=Arbox&lang=he&location=167&referrer=PLUGIN",
   },
   social: {
     instagram: "https://instagram.com/idopariente/",
