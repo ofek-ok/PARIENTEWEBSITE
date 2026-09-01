@@ -33,12 +33,14 @@ export default function HomePage() {
           ==================================================================== */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center border-b border-zinc-800/80 overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
         {/* Full-width Background Video Layer */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
           <iframe
             src="https://www.youtube.com/embed/haaRrTHKYJk?autoplay=1&mute=1&loop=1&playlist=haaRrTHKYJk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
             title="Pariente Academy Hero Background Video"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160vw] h-[160vh] max-w-none opacity-40 object-cover scale-125"
             allow="autoplay; muted"
+            tabIndex={-1}
+            aria-hidden="true"
           />
 
           {/* Dark Overlay Vignette */}

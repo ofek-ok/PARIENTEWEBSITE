@@ -157,9 +157,17 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        {/* Bottom copyright and legal */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.hebrewName}. כל הזכויות שמורות.</p>
+          
+          <div className="flex flex-wrap items-center justify-center gap-4 text-zinc-400 font-medium">
+            <Link href="/privacy" className="hover:text-white transition-colors">מדיניות פרטיות</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">תנאי שימוש</Link>
+            <Link href="/accessibility" className="hover:text-white transition-colors">הצהרת נגישות</Link>
+            <Link href="/cancellation" className="hover:text-white transition-colors">ביטול עסקה</Link>
+          </div>
+
           <div className="flex items-center space-x-6 space-x-reverse">
             <span>כפר סבא, ישראל</span>
           </div>

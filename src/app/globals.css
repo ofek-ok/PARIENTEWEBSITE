@@ -85,3 +85,39 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f3c010;
 }
+
+/* Accessibility Preferences */
+html.a11y-high-contrast {
+  --color-brand-gold: #ffeb3b;
+  --color-dark-bg: #000000;
+  --color-dark-surface: #000000;
+  --color-dark-card: #000000;
+  --foreground: #ffffff;
+  filter: contrast(1.2) saturate(1.1);
+}
+html.a11y-high-contrast body, html.a11y-high-contrast section, html.a11y-high-contrast div {
+  border-color: #ffffff !important;
+}
+
+html.a11y-highlight-links a, 
+html.a11y-highlight-links button {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+}
+
+html.a11y-large-text {
+  font-size: 110%;
+}
+html.a11y-large-text h1, html.a11y-large-text h2, html.a11y-large-text h3, html.a11y-large-text p {
+  line-height: 1.6 !important;
+}
+
+html.a11y-reduced-motion *, 
+html.a11y-reduced-motion *::before, 
+html.a11y-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

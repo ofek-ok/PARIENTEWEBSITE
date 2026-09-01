@@ -66,8 +66,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input
-          label="Full Name *"
-          placeholder="e.g. David Cohen"
+          label="שם מלא *"
+          placeholder="לדוגמה: דוד כהן"
           required
           value={formData.fullName}
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -75,7 +75,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Input
-            label="Phone Number *"
+            label="מספר טלפון *"
             type="tel"
             placeholder="05X-XXXXXXX"
             required
@@ -83,7 +83,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           />
           <Input
-            label="Email Address"
+            label="כתובת אימייל"
             type="email"
             placeholder="name@domain.com"
             value={formData.email}
@@ -93,41 +93,47 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
         <div className="space-y-1.5">
           <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Target Audience / Program *
+            איזה מסלול מעניין אותך? *
           </label>
           <select
             value={formData.program}
             onChange={(e) => setFormData({ ...formData, program: e.target.value })}
             className="w-full px-4 py-3 bg-zinc-900/90 border border-zinc-800 rounded-xl text-zinc-100 text-sm font-medium focus:outline-none focus:border-[#f3c010] min-h-[48px]"
           >
-            <option value="general">Select Program...</option>
-            <option value="kids">Children (Ages 4–12)</option>
-            <option value="teens">Teenagers (Ages 13–17)</option>
-            <option value="competition">Competitive Youth Track (Ages 13–21)</option>
-            <option value="adults">Adults BJJ / MMA / Muay Thai (22–45)</option>
-            <option value="sensei-aba">Sensei Aba (Father & Child Initiative)</option>
-            <option value="achim-lachaim">Achim LaChaim (Wounded Soldiers Project)</option>
+            <option value="general">בחירת מסלול...</option>
+            <option value="kids">ילדים (גילאי 4–12)</option>
+            <option value="teens">נוער (גילאי 13–17)</option>
+            <option value="competition">מסלול נוער תחרותי</option>
+            <option value="adults">בוגרים</option>
+            <option value="sensei-aba">סנסאי אבא (אבות וילדים)</option>
+            <option value="achim-lachaim">אחים לחיים (שיקום וקהילה)</option>
           </select>
         </div>
 
         <Textarea
-          label="Additional Notes / Experience Level"
-          placeholder="Tell us if you have previous martial arts experience or specific goals..."
+          label="הערות / רמת ניסיון"
+          placeholder="ספרו לנו אם יש לכם ניסיון קודם או מטרה ספציפית..."
           value={formData.notes}
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
         />
 
-        {/* DOMINANT FORM CTA BUTTON */}
-        <Button
-          variant="glow"
-          size="lg"
-          type="submit"
-          fullWidth
-          rightIcon={<ArrowRight className="w-4 h-4" />}
-          className="mt-2"
-        >
-          Confirm Free Trial Booking
-        </Button>
+        <div className="space-y-3 pt-2">
+          {/* DOMINANT FORM CTA BUTTON */}
+          <Button
+            variant="glow"
+            size="lg"
+            type="submit"
+            fullWidth
+            rightIcon={<ArrowRight className="w-4 h-4 ml-1 rotate-180" />}
+          >
+            לתיאום אימון ניסיון חינם
+          </Button>
+
+          <p className="text-[11px] text-zinc-500 text-center px-4 leading-relaxed">
+            בשליחת הטופס אני מאשר/ת שהפרטים שלי ישמרו במערכת לטובת יצירת קשר בלבד. למידע נוסף, קראו את{" "}
+            <a href="/privacy" className="text-[#f3c010] hover:underline focus:outline-none focus:ring-1 focus:ring-[#f3c010] rounded-sm">מדיניות הפרטיות</a> שלנו.
+          </p>
+        </div>
       </form>
     </Card>
   );
