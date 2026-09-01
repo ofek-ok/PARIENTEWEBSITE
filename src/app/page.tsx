@@ -70,14 +70,6 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Dynamic Authentic Fighter Overlay */}
-          <div className="absolute bottom-0 left-0 sm:left-10 opacity-70 pointer-events-none mix-blend-lighten max-w-[40%] sm:max-w-[30%]">
-            <img
-              src="/images/mob_mma.png"
-              alt=""
-              className="w-full h-auto object-contain"
-            />
-          </div>
         </div>
 
         {/* Centered Hero Content */}
@@ -140,17 +132,24 @@ export default function HomePage() {
           CHAPTER 2 — PROGRAM SELECTOR (PARIENTE YELLOW BRANDED SURFACE)
           ==================================================================== */}
       <Section id="programs" variant="yellowDark" size="lg" className="relative border-b border-[#d4a300] overflow-hidden">
-        {/* Subtle scratch texture on yellow */}
-        <div
-          className="absolute inset-0 opacity-15 pointer-events-none bg-center bg-cover mix-blend-overlay"
-          style={{ backgroundImage: "url('/images/scratch_texture.png')" }}
-        />
+        {/* Authentic Fighter/Card Artwork Background from parientemma.com */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <picture>
+            <source media="(max-width: 768px)" srcSet="/images/good_app.png" />
+            <img 
+              src="/images/good_deck.png" 
+              alt="Pariente Fighters" 
+              className="w-full h-full object-cover object-center opacity-30 mix-blend-multiply"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#d4a300]/60 via-transparent to-[#d4a300]/90" />
+        </div>
 
-        {/* Red Lion Scratch Brand Signature */}
-        <div className="absolute -top-12 -left-12 opacity-25 pointer-events-none -rotate-45">
+        {/* Subtle red claw marks for brand continuity */}
+        <div className="absolute top-1/2 -left-16 opacity-30 pointer-events-none -rotate-12 z-0">
           {/* eslint-disable-next-html-element-for-img */}
           <img
-            src="/images/red_lion_scratches.svg"
+            src="/images/claw_scratches.svg"
             alt=""
             className="w-80 h-auto object-contain"
           />
@@ -173,29 +172,16 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
             {/* Card 1 — Kids */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010] transition-all duration-300 shadow-2xl">
-              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
-                <div className="space-y-2">
-                  <ImageIcon className="w-8 h-8 text-[#f3c010]/70 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון ילדים — Pariente Academy]
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 space-y-4">
-                <h3 className="text-2xl font-extrabold text-white">ילדים | גילאי 4–12</h3>
+            <Card variant="solid" className="bg-[#0d0f13]/95 border-zinc-800/80 p-8 flex flex-col justify-between group hover:border-[#f3c010] hover:bg-[#060709] transition-all duration-300 shadow-2xl">
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black text-white group-hover:text-[#f3c010] transition-colors">ילדים | גילאי 4–12</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   מסגרת שבה ילדים לומדים אמנויות לחימה, מתקדמים בקצב שלהם ורוכשים ביטחון, משמעת והרגלים שממשיכים איתם גם מחוץ לאימון.
                 </p>
-                <div className="pt-2">
-                  <Button
-                    variant="gold"
-                    size="md"
-                    href="/kids"
-                    fullWidth
-                  >
+                <div className="pt-4">
+                  <Button variant="gold" size="md" href="/kids" fullWidth>
                     לאימוני הילדים
                   </Button>
                 </div>
@@ -203,27 +189,14 @@ export default function HomePage() {
             </Card>
 
             {/* Card 2 — Teens */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010] transition-all duration-300 shadow-2xl">
-              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
-                <div className="space-y-2">
-                  <ImageIcon className="w-8 h-8 text-[#f3c010]/70 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון נוער — Pariente Academy]
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 space-y-4">
-                <h3 className="text-2xl font-extrabold text-white">נוער | גילאי 13–17</h3>
+            <Card variant="solid" className="bg-[#0d0f13]/95 border-zinc-800/80 p-8 flex flex-col justify-between group hover:border-[#f3c010] hover:bg-[#060709] transition-all duration-300 shadow-2xl">
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black text-white group-hover:text-[#f3c010] transition-colors">נוער | גילאי 13–17</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   אימוני אמנויות לחימה והגנה עצמית לנוער שרוצה להתחזק, לדעת להתמודד ולהיות חלק מקבוצה טובה. אפשר להתאמן ברצינות גם בלי לרצות להתחרות.
                 </p>
-                <div className="pt-2">
-                  <Button
-                    variant="gold"
-                    size="md"
-                    href="/teens"
-                    fullWidth
-                  >
+                <div className="pt-4">
+                  <Button variant="gold" size="md" href="/teens" fullWidth>
                     לאימוני הנוער
                   </Button>
                 </div>
@@ -231,27 +204,14 @@ export default function HomePage() {
             </Card>
 
             {/* Card 3 — Competition */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010] transition-all duration-300 shadow-2xl">
-              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
-                <div className="space-y-2">
-                  <Trophy className="w-8 h-8 text-[#f3c010]/70 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום נוער תחרותי — Pariente Academy]
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 space-y-4">
-                <h3 className="text-2xl font-extrabold text-white">המסלול התחרותי</h3>
+            <Card variant="solid" className="bg-[#0d0f13]/95 border-zinc-800/80 p-8 flex flex-col justify-between group hover:border-[#f3c010] hover:bg-[#060709] transition-all duration-300 shadow-2xl">
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black text-white group-hover:text-[#f3c010] transition-colors">המסלול התחרותי</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
                   לספורטאים שרוצים לקחת את האימונים צעד קדימה. יותר אימונים, יותר מחויבות ומסלול שמוביל מתחרויות בישראל ועד לזירה הבינלאומית.
                 </p>
-                <div className="pt-2">
-                  <Button
-                    variant="gold"
-                    size="md"
-                    href="/competition"
-                    fullWidth
-                  >
+                <div className="pt-4">
+                  <Button variant="gold" size="md" href="/competition" fullWidth>
                     למסלול התחרותי
                   </Button>
                 </div>
@@ -259,27 +219,14 @@ export default function HomePage() {
             </Card>
 
             {/* Card 4 — Adults */}
-            <Card variant="solid" className="bg-[#0d0f13] border-zinc-800 p-0 overflow-hidden flex flex-col justify-between group hover:border-[#f3c010] transition-all duration-300 shadow-2xl">
-              <div className="relative aspect-[16/9] bg-[#060709] flex items-center justify-center p-6 text-center border-b border-zinc-800">
-                <div className="space-y-2">
-                  <Users className="w-8 h-8 text-[#f3c010]/70 mx-auto" />
-                  <span className="text-xs font-bold text-zinc-400 block uppercase">
-                    [צילום אימון בוגרים — Pariente Academy]
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 space-y-4">
-                <h3 className="text-2xl font-extrabold text-white">בוגרים</h3>
+            <Card variant="solid" className="bg-[#0d0f13]/95 border-zinc-800/80 p-8 flex flex-col justify-between group hover:border-[#f3c010] hover:bg-[#060709] transition-all duration-300 shadow-2xl">
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black text-white group-hover:text-[#f3c010] transition-colors">בוגרים</h3>
                 <p className="text-base text-zinc-300 leading-relaxed font-normal">
-                  ג'ו ג'יטסו, MMA, אגרוף תאילנדי, כושר ואימונים נוספים לאורך השבוע, לצד אירועים ופעילויות מיוחדות. למי שרוצה להתחיל להתאמן ולמי שאמנויות לחימה כבר הפכו לחלק מהחיים שלו.
+                  ג'ו ג'יטסו, MMA, אגרוף תאילנדי, כושר ואימונים נוספים לאורך השבוע, לצד אירועים ופעילויות מיוחדות. למי שרוצה להתחיל להתאמן.
                 </p>
-                <div className="pt-2">
-                  <Button
-                    variant="gold"
-                    size="md"
-                    href="/adults"
-                    fullWidth
-                  >
+                <div className="pt-4">
+                  <Button variant="gold" size="md" href="/adults" fullWidth>
                     לאימוני הבוגרים
                   </Button>
                 </div>
