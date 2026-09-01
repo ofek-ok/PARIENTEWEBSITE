@@ -69,6 +69,15 @@ export default function HomePage() {
               className="w-[750px] sm:w-[900px] h-auto object-contain"
             />
           </div>
+
+          {/* Dynamic Authentic Fighter Overlay */}
+          <div className="absolute bottom-0 left-0 sm:left-10 opacity-70 pointer-events-none mix-blend-lighten max-w-[40%] sm:max-w-[30%]">
+            <img
+              src="/images/mob_mma.png"
+              alt=""
+              className="w-full h-auto object-contain"
+            />
+          </div>
         </div>
 
         {/* Centered Hero Content */}
@@ -351,11 +360,11 @@ export default function HomePage() {
 
                 {/* eslint-disable-next-html-element-for-img */}
                 <img
-                  src="/images/mma_action.jpg"
+                  src="/images/ido_pariente.jpg"
                   alt="עידו פריינטה"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-[#040406]/30 to-transparent" />
                 <div className="absolute bottom-6 right-6 left-6 text-right z-20">
                   <span className="text-xs font-bold text-[#f3c010] uppercase tracking-wider block">
                     {SITE_CONFIG.founder}
@@ -539,8 +548,13 @@ export default function HomePage() {
       {/* ====================================================================
           CHAPTER 7 — GALLERY (DARK & MEDIA-FIRST)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800">
-        <Container size="default">
+      <Section variant="dark" size="lg" className="border-b border-zinc-800 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-[#040406]">
+          {/* eslint-disable-next-html-element-for-img */}
+          <img src="/images/training_mg_5664.jpg" alt="" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040406] via-transparent to-[#040406]" />
+        </div>
+        <Container size="default" className="relative z-10">
           <SectionHeader
             title="ככה זה נראה אצלנו"
             description="אימונים, תחרויות, ילדים, בוגרים והרבה שעות על המזרן."
@@ -582,13 +596,19 @@ export default function HomePage() {
           CHAPTER 8 — GENERAL LEAD CONVERSION (PARIENTE YELLOW BRANDED CONVERSION SURFACE)
           ==================================================================== */}
       <Section id="lead-form" variant="yellowDark" size="lg" className="border-b border-[#d4a300] relative overflow-hidden">
-        {/* Red Scratch Signature Background Accent */}
-        <div className="absolute top-6 right-6 opacity-20 pointer-events-none rotate-12">
+        {/* Authentic Yellow Texture Background */}
+        <div
+          className="absolute inset-0 opacity-40 pointer-events-none bg-center bg-cover mix-blend-multiply"
+          style={{ backgroundImage: "url('/images/yellow_bg.png')" }}
+        />
+
+        {/* Authentic Red Scratch Signature Background Accent */}
+        <div className="absolute top-0 right-0 sm:-top-10 sm:-right-10 opacity-30 pointer-events-none rotate-[15deg]">
           {/* eslint-disable-next-html-element-for-img */}
           <img
-            src="/images/red_lion_scratches.svg"
+            src="/images/claw_scratches.svg"
             alt=""
-            className="w-72 h-auto object-contain"
+            className="w-96 sm:w-[500px] h-auto object-contain"
           />
         </div>
 
@@ -607,8 +627,12 @@ export default function HomePage() {
       {/* ====================================================================
           CHAPTER 9 — PRACTICAL INFORMATION (DARK)
           ==================================================================== */}
-      <Section variant="charcoal" size="md">
-        <Container size="default">
+      <Section variant="charcoal" size="md" className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-20 pointer-events-none bg-center bg-cover mix-blend-overlay"
+          style={{ backgroundImage: "url('/images/footer_bg.png')" }}
+        />
+        <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-[#f3c010] font-bold text-sm">
