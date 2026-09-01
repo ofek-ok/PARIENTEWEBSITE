@@ -481,6 +481,45 @@ export default function HomePage() {
       </Section>
 
       {/* ====================================================================
+          CHAPTER 5.5 — SCHEDULE (ARBOX EMBED)
+          ==================================================================== */}
+      <Section variant="dark" size="lg" className="border-b border-zinc-800">
+        <Container size="default">
+          <SectionHeader
+            title="מערכת השעות"
+            description="כל האימונים במקום אחד. בחרו את הקבוצה או האימון שמעניינים אתכם ובדקו מתי נפגשים על המזרן."
+            align="right"
+          />
+
+          <div className="relative mt-8 w-full rounded-2xl bg-[#060709] overflow-hidden shadow-2xl border border-zinc-800 flex flex-col items-center justify-center min-h-[600px]">
+            {/* Fallback visible behind the iframe if it fails to load or render properly */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
+               <p className="text-zinc-400 font-medium mb-4">לא הצלחנו לטעון כרגע את מערכת השעות.</p>
+               <a href={SITE_CONFIG.contact.arboxScheduleUrl} target="_blank" rel="noopener noreferrer" className="text-[#f3c010] font-bold text-sm hover:underline">
+                 פתיחת מערכת השעות בחלון חדש
+               </a>
+            </div>
+            
+            <iframe
+              src={SITE_CONFIG.contact.arboxScheduleUrl}
+              className="relative z-10 w-full h-[600px] md:h-[750px] border-0 bg-white"
+              title="Pariente Academy Arbox Schedule"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="mt-8 text-center">
+            <a
+              href="/schedule"
+              className="text-[#f3c010] hover:text-white font-bold text-sm sm:text-base transition-colors"
+            >
+              מערכת השעות המלאה
+            </a>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ====================================================================
           CHAPTER 6 — MORE AT PARIENTE (EDITORIAL BLACK WITH YELLOW HIGHLIGHT CARDS)
           ==================================================================== */}
       <Section variant="dark" size="lg" className="relative border-b border-zinc-800 overflow-hidden">
