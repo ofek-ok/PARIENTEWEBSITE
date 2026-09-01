@@ -3,6 +3,7 @@ import { Rubik, Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const rubik = Rubik({
@@ -54,10 +55,11 @@ export default function RootLayout({
       dir="rtl"
       className={`${rubik.variable} ${plusJakarta.variable} ${inter.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#08090b] text-zinc-100 font-sans antialiased flex flex-col justify-between selection:bg-[#f3c010] selection:text-white">
+      <body className="min-h-screen bg-[#08090b] text-zinc-100 font-sans antialiased flex flex-col justify-between selection:bg-[#f3c010] selection:text-white relative">
         <Header />
         <main className="flex-grow pt-[72px] sm:pt-[84px]">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
