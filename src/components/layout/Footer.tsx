@@ -165,7 +165,6 @@ export const Footer: React.FC = () => {
             <Link href="/privacy" className="hover:text-white transition-colors">מדיניות פרטיות</Link>
             <Link href="/terms" className="hover:text-white transition-colors">תנאי שימוש</Link>
             <Link href="/accessibility" className="hover:text-white transition-colors">הצהרת נגישות</Link>
-            <Link href="/cancellation" className="hover:text-white transition-colors">ביטול עסקה</Link>
           </div>
 
           <div className="flex items-center space-x-6 space-x-reverse">

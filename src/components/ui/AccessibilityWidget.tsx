@@ -35,21 +35,21 @@ export const AccessibilityWidget: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-24 left-6 sm:bottom-28 sm:left-8 z-[110] font-sans">
+    <div className="fixed bottom-[144px] left-6 lg:bottom-28 lg:left-8 z-[110] font-sans">
       {/* Widget Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="הגדרות נגישות"
         aria-expanded={isOpen}
-        className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0d0f13] hover:bg-[#14171e] border-2 border-zinc-700 hover:border-[#f3c010] text-zinc-300 hover:text-[#f3c010] rounded-full shadow-2xl flex items-center justify-center transition-all group focus:outline-none focus:ring-2 focus:ring-[#f3c010] focus:ring-offset-2 focus:ring-offset-[#060709]"
+        className="w-12 h-12 lg:w-14 lg:h-14 bg-[#0d0f13] hover:bg-[#14171e] border-2 border-zinc-700 hover:border-[#f3c010] text-zinc-300 hover:text-[#f3c010] rounded-full shadow-2xl flex items-center justify-center transition-all group focus:outline-none focus:ring-2 focus:ring-[#f3c010] focus:ring-offset-2 focus:ring-offset-[#060709]"
       >
-        <Accessibility className="w-6 h-6 sm:w-7 sm:h-7" />
+        <Accessibility className="w-6 h-6 lg:w-7 lg:h-7" />
       </button>
 
       {/* Settings Panel */}
       {isOpen && (
         <div 
-          className="absolute bottom-16 left-0 sm:bottom-20 sm:left-0 w-72 sm:w-80 bg-[#0d0f13] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col text-right animate-in fade-in slide-in-from-bottom-4 duration-200"
+          className="absolute bottom-16 left-0 lg:bottom-20 lg:left-0 w-72 lg:w-80 bg-[#0d0f13] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col text-right animate-in fade-in slide-in-from-bottom-4 duration-200"
           role="dialog"
           aria-label="תפריט נגישות"
         >

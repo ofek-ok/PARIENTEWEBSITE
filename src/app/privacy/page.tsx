@@ -2,28 +2,74 @@ import React from "react";
 import { Container } from "@/components/sections/Container";
 
 export const metadata = {
-  title: "מדיניות פרטיות",
-  description: "מדיניות הפרטיות של פריינטה אקדמי",
+  title: "מדיניות פרטיות | פריינטה אקדמי",
+  description: "מדיניות הפרטיות של פריינטה אקדמי - איסוף ושימוש במידע מהאתר.",
 };
 
 export default function PrivacyPage() {
   return (
     <div className="py-24 sm:py-32 bg-[#040406] min-h-screen">
-      <Container size="narrow" className="space-y-8 text-right">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">מדיניות פרטיות</h1>
+      <Container size="narrow" className="text-right">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-8">מדיניות פרטיות</h1>
         <div className="max-w-none text-zinc-300 space-y-4 text-base leading-relaxed">
-          <p className="text-lg">[TODO: כאן יופיע הטקסט המלא של מדיניות הפרטיות כפי שינוסח על ידי הגורם המשפטי של האקדמיה.]</p>
           <p>
-            אנו בפריינטה אקדמי לוקחים ברצינות את פרטיות המשתמשים שלנו.
-            כל מידע שנאסף בטפסים השונים מיועד אך ורק לצורך יצירת קשר מתן שירות ללקוחות.
+            פריינטה אקדמי ("אנו" או "האקדמיה") מכבדת את פרטיותכם. מסמך זה מפרט את מדיניות הפרטיות שלנו בנוגע למידע הנאסף בעת השימוש באתר האינטרנט שלנו ובפנייה אלינו.
           </p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">איסוף מידע</h2>
-          <p>[TODO: פירוט איזה מידע נאסף]</p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">שימוש במידע</h2>
-          <p>[TODO: פירוט מטרות השימוש במידע]</p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">העברת מידע לצדדים שלישיים</h2>
-          <p>[TODO: פירוט אודות שירותי צד ג' כגון Arbox, Google Analytics, Vercel]</p>
-          <p className="text-sm text-zinc-500 mt-12">תאריך עדכון אחרון: {new Date().toLocaleDateString('he-IL')}</p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. איזה מידע אנחנו אוספים?</h2>
+          <p>
+            כאשר אתם משאירים פנייה באתר, אנו עשויים לאסוף את המידע הבא (בהתאם לטופס):
+          </p>
+          <ul className="list-disc list-inside space-y-2 mt-4 mb-4">
+            <li>שם מלא</li>
+            <li>מספר טלפון</li>
+            <li>כתובת דואר אלקטרוני</li>
+            <li>גיל הילד (כאשר הפנייה נוגעת למסלולי ילדים ונוער, כדי להתאים קבוצה)</li>
+            <li>מסלול האימון בו התעניינתם</li>
+            <li>כל מידע נוסף שהזנתם מרצונכם החופשי בשדה ההערות</li>
+          </ul>
+          <p>
+            בנוסף, ייתכן שיאסף מידע טכני בסיסי הנוגע לאופן הגעתכם והשימוש שלכם באתר, כגון: עמוד הנחיתה ממנו פניתם, נתוני מקור הגעה (UTM), כתובת ה-Referrer ומידע טכני בסיסי שמייצר הדפדפן.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. למה משמש המידע?</h2>
+          <p>המידע שנאסף משמש למטרות הבאות:</p>
+          <ul className="list-disc list-inside space-y-2 mt-4 mb-4">
+            <li>מענה לפניותיכם, מתן מידע נוסף ויצירת קשר.</li>
+            <li>תיאום אימון ניסיון ושיבוץ (שלכם או של ילדכם) בקבוצה המתאימה.</li>
+            <li>ניהול תהליך ההרשמה וקליטת הלידים במערכות האקדמיה.</li>
+            <li>תפעול שוטף, שיפור חווית המשתמש והאתר.</li>
+            <li>מדידה טכנית ושיווקית בסיסית של ביצועי האתר.</li>
+            <li>עמידה בדרישות אבטחה וחוק.</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. העברת מידע לצדדים שלישיים ומערכות חיצוניות</h2>
+          <p>
+            הפניות מהאתר (הלידים) מועברות ומנוהלות באופן שוטף באמצעות מערכת <strong>Arbox CRM</strong> המשמשת גם כמערכת ניהול המתאמנים ומערכת השעות של האקדמיה.
+          </p>
+          <p>
+            כמו כן, האתר מאוחסן ומופעל על גבי תשתית <strong>Vercel</strong>. 
+            אנו לא מעבירים או מוכרים את המידע האישי שלכם לצדדים שלישיים לצרכים מסחריים או לטובת פרסום חיצוני ללא הסכמתכם. לא מותקנות באתר טכנולוגיות מעקב ופרסום (כגון Google Analytics, Meta Pixel וכדומה) אשר אוספות מידע לצרכי שיווק מחדש (Remarketing), אלא אם יצוין אחרת במפורש.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">4. פרטיות ילדים וקטינים</h2>
+          <p>
+            בחלק מהטפסים באתר (כגון מסלולי ילדים ונוער), עשוי להתבקש מידע מצומצם אודות גיל הילד. מידע זה נועד אך ורק כדי לאפשר לצוות להמליץ על קבוצת הגיל והרמה המתאימה. האתר אינו מיועד לאיסוף מידע ישירות מילדים או קטינים ללא מעורבות הוריהם, ואנו לא אוספים מידע רגיש או רפואי במסגרת טפסי האתר.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">5. הסכמה ודיוור</h2>
+          <p>
+            שליחת פנייה לתיאום אימון ניסיון או קבלת מידע <strong>אינה</strong> מהווה הסכמה אוטומטית לקבלת חומר פרסומי שוטף (ניוזלטר וכדומה). המידע ישמש אותנו רק לשם טיפול בפנייתכם הישירה.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">6. יצירת קשר</h2>
+          <p>
+            בכל שאלה בנושא פרטיות או בקשה לעיון, תיקון או מחיקה של המידע המצוי אצלנו, תוכלו לפנות אלינו בכתובת:
+            <br />
+            דוא"ל: <a href="mailto:parienteacademy@gmail.com" className="text-[#f3c010] hover:underline">parienteacademy@gmail.com</a>
+          </p>
+
+          <p className="text-sm text-zinc-500 mt-12">תאריך עדכון אחרון: מרץ 2024</p>
         </div>
       </Container>
     </div>

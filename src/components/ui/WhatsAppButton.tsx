@@ -14,7 +14,7 @@ export const WhatsAppButton: React.FC = () => {
       href={waUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[100] bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
+      className="fixed bottom-20 left-6 lg:bottom-8 lg:left-8 z-[100] bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 lg:p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
       aria-label="שלח הודעה בווצאפ"
     >
       <svg

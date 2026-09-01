@@ -130,8 +130,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           </Button>
 
           <p className="text-[11px] text-zinc-500 text-center px-4 leading-relaxed">
-            בשליחת הטופס אני מאשר/ת שהפרטים שלי ישמרו במערכת לטובת יצירת קשר בלבד. למידע נוסף, קראו את{" "}
-            <a href="/privacy" className="text-[#f3c010] hover:underline focus:outline-none focus:ring-1 focus:ring-[#f3c010] rounded-sm">מדיניות הפרטיות</a> שלנו.
+            שליחת הטופס מהווה אישור לשימוש בפרטים לצורך טיפול בפנייה בהתאם ל<a href="/privacy" className="text-[#f3c010] hover:underline focus:outline-none focus:ring-1 focus:ring-[#f3c010] rounded-sm">מדיניות הפרטיות</a>.
           </p>
         </div>
       </form>

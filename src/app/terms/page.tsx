@@ -2,24 +2,69 @@ import React from "react";
 import { Container } from "@/components/sections/Container";
 
 export const metadata = {
-  title: "תנאי שימוש",
-  description: "תנאי השימוש של אתר פריינטה אקדמי",
+  title: "תנאי שימוש | פריינטה אקדמי",
+  description: "תנאי השימוש באתר פריינטה אקדמי.",
 };
 
 export default function TermsPage() {
   return (
     <div className="py-24 sm:py-32 bg-[#040406] min-h-screen">
-      <Container size="narrow" className="space-y-8 text-right">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">תנאי שימוש</h1>
+      <Container size="narrow" className="text-right">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-8">תנאי שימוש</h1>
         <div className="max-w-none text-zinc-300 space-y-4 text-base leading-relaxed">
-          <p className="text-lg">[TODO: כאן יופיע הטקסט המלא של תנאי השימוש (תקנון האתר) כפי שינוסח על ידי הגורם המשפטי של האקדמיה.]</p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">כללי</h2>
-          <p>[TODO: מבוא לתנאי השימוש והסכמת המשתמש]</p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">קניין רוחני</h2>
-          <p>כל זכויות היוצרים והקניין הרוחני באתר, לרבות תמונות, טקסטים, לוגואים וסרטונים, שייכים לפריינטה אקדמי.</p>
-           <h2 className="text-2xl font-bold text-white mt-8 mb-4">הגבלת אחריות</h2>
-          <p>[TODO: פטור מאחריות במידת הצורך]</p>
-          <p className="text-sm text-zinc-500 mt-12">תאריך עדכון אחרון: {new Date().toLocaleDateString('he-IL')}</p>
+          <p>
+            ברוכים הבאים לאתר האינטרנט של פריינטה אקדמי ("האתר"). השימוש באתר ובשירותים המוצעים בו כפוף לתנאי שימוש אלה. בעצם הגלישה והשימוש באתר, הינך מאשר/ת את הסכמתך לתנאים אלו.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. מטרת האתר</h2>
+          <p>
+            האתר נועד לספק מידע שיווקי וכללי אודות הפעילויות, מסלולי האימון, והצוות של פריינטה אקדמי, וכן להוות ערוץ יצירת קשר לטובת התעניינות באימונים ושיעורי ניסיון. התכנים באתר הינם למטרות מידע בלבד. 
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. מערכת שעות ושינויים</h2>
+          <p>
+            מועדי האימונים, המסלולים, מחירי המנויים (ככל שמופיעים) ולוח השיעורים (Arbox) המוצגים באתר עשויים להשתנות מעת לעת בהתאם לשיקול דעתה הבלעדי של האקדמיה. האקדמיה אינה מתחייבת כי המידע באתר הוא תמיד העדכני ביותר, והמידע הקובע הוא זה שיימסר על ידי צוות האקדמיה בפועל.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. פניות לאימון ניסיון</h2>
+          <p>
+            מילוי טופס התעניינות, השארת פרטים או בקשה לתיאום אימון ניסיון דרך האתר אינם מהווים הרשמה אוטומטית או חברות באקדמיה. השתתפות באימונים מותנית בתיאום מראש, בחתימה על מסמכי רישום פיזיים או דיגיטליים במקום, ובהצהרת בריאות כדין.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">4. שירותי צד שלישי (Arbox)</h2>
+          <p>
+            האתר מציג ומטמיע מערכת שעות חיצונית המסופקת על ידי Arbox CRM. השימוש במערכת השעות וכן העברת נתוני פניות מטפסים כפופים לזמינות המערכת של Arbox. האקדמיה אינה אחראית על תקלות או בעיות טכניות שמקורן בצדדים שלישיים.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">5. קניין רוחני</h2>
+          <p>
+            כל זכויות היוצרים והקניין הרוחני באתר, לרבות שם המותג "פריינטה אקדמי", סמלילים (לוגו), תמונות, סרטונים, עיצובים, טקסטים ואלמנטים גרפיים, שייכים באופן בלעדי לפריינטה אקדמי או לצדדים שלישיים שהרשו לאקדמיה להשתמש בהם. אין להעתיק, לשכפל, להפיץ או לעשות שימוש מסחרי בתכנים אלו ללא קבלת אישור מראש ובכתב.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">6. הגבלת אחריות</h2>
+          <p>
+            פריינטה אקדמי אינה נושאת באחריות לכל נזק עקיף או ישיר שייגרם כתוצאה משימוש באתר או מהסתמכות על התכנים המופיעים בו. אמנויות לחימה ואימונים גופניים כרוכים במאמץ פיזי, ואין לראות בתוכן האתר כהמלצה רפואית.
+          </p>
+          
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">7. זמינות האתר</h2>
+          <p>
+            האקדמיה עושה מאמץ להבטיח את זמינות האתר, אך רשאית להשבית אותו לצורך תחזוקה או מכל סיבה אחרת, ולשנות את תנאי השימוש מעת לעת ללא הודעה מוקדמת.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">8. פרטיות</h2>
+          <p>
+            השימוש במידע שאתם מוסרים באתר כפוף ל<a href="/privacy" className="text-[#f3c010] hover:underline">מדיניות הפרטיות</a> שלנו, המהווה חלק בלתי נפרד מתנאים אלה.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-8 mb-4">9. יצירת קשר</h2>
+          <p>
+            נשמח לעמוד לרשותכם בכל שאלה או בירור:<br />
+            טלפון: 054-7468505<br />
+            דוא"ל: <a href="mailto:parienteacademy@gmail.com" className="text-[#f3c010] hover:underline">parienteacademy@gmail.com</a><br />
+            כתובת: ויצמן 95, כפר סבא.
+          </p>
+
+          <p className="text-sm text-zinc-500 mt-12">תאריך עדכון אחרון: מרץ 2024</p>
         </div>
       </Container>
     </div>
