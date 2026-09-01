@@ -483,7 +483,7 @@ export default function HomePage() {
       {/* ====================================================================
           CHAPTER 5.5 — SCHEDULE (ARBOX EMBED)
           ==================================================================== */}
-      <Section variant="dark" size="lg" className="border-b border-zinc-800">
+      <Section id="schedule" variant="dark" size="lg" className="border-b border-zinc-800">
         <Container size="default">
           <SectionHeader
             title="מערכת השעות"
@@ -506,15 +506,6 @@ export default function HomePage() {
               title="Pariente Academy Arbox Schedule"
               loading="lazy"
             />
-          </div>
-
-          <div className="mt-8 text-center">
-            <a
-              href="/schedule"
-              className="text-[#f3c010] hover:text-white font-bold text-sm sm:text-base transition-colors"
-            >
-              מערכת השעות המלאה
-            </a>
           </div>
         </Container>
       </Section>

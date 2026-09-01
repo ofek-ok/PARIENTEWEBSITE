@@ -38,7 +38,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: "בוגרים", href: "/adults", description: "אימונים, כושר וקהילה" },
   { label: "סנסאי אבא", href: "/sensei-aba", description: "חיבור אבא וילד על המזרן" },
   { label: "אחים לחיים", href: "/achim-lachaim", description: "פרויקט שיקום וקהילה ללוחמים" },
-  { label: "מערכת שעות", href: "/schedule" },
+  { label: "מערכת שעות", href: "/#schedule" },
   { label: "אירועים ותחרויות", href: "/events" },
   { label: "גלריה", href: "/gallery" },
   { label: "צור קשר", href: "/contact" },
