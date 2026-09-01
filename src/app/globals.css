@@ -123,13 +123,6 @@ html.a11y-reduced-motion *::after {
 }
 
 /* Stop Hero Background Video when reduced motion is requested */
-html.a11y-reduced-motion iframe[title="Pariente Academy Hero Background Video"],
-@media (prefers-reduced-motion: reduce) {
-  iframe[title="Pariente Academy Hero Background Video"] {
-    display: none !important;
-  }
-
-/* Stop Hero Background Video when reduced motion is requested */
 html.a11y-reduced-motion iframe[title="Pariente Academy Hero Background Video"] {
   display: none !important;
 }
